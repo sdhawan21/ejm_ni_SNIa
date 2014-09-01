@@ -1,0 +1,17 @@
+\begin{table}
+\caption{This table summarizes the different methods used to dervie the $M_{Ni}$ values of SN2014J. There is a good agreement between the different methods, however, the bolometric light curves give very different values depending on the reddening assumed}
+
+\begin{center}
+\begin{tabular}{llcc}
+\hline
+$M_{Ni}$ & $e_{M_{Ni}}$  & Method & Reference\\
+\hline
+0.62 & 0.13 & $\gamma$ ray ${^56}Co$ line		 & Churazov 2014\\
+0.37 & 	 \ldots	& Bolometric lc. $A_V$=1.7 mag & Margutti 2014		\\
+0.77 &	 \ldots & Bolometric lc, $A_V$=2.5	& Goobar 2014 \\
+0.58 & 0.17 & $t_2$ combined fit	& This work \\
+\hline
+\end{tabular}
+\label{tab:14j}
+\end{center}
+\end{table}
