@@ -1,0 +1,33 @@
+This file is a short text of incoherent observations on the Ni masses follow up paper. These are either for pre-emptive follow up question on the analyses or to catalog reasoning/textthat isn't suitable for the main body of the paper but still needs to be documented.
+
+--also to prevent forgetfulness from getting the better of me ;)
+
+1. The bolometric decline rates. In the current paper, the bolometric decline rates are a diagnostic for the internal structure of the ejecta. The fact that the m_{bol}|late is uniform (sigma=0.003, mu~0.03-0.028, depending on whether the 91bg likes are included or not)
+
+However, the values published in Contardo '00 give a mean value of 2.6 mag/100days (+/- 0.2) which is inconsistent with the values 
+
+Its because we use BVRIJH and not just BVRI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
