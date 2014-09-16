@@ -14,9 +14,14 @@ class flux_conv:   #conversion of light curves to filter fluxes, no propagation 
                         arr.append(fl)
                 return np.array(arr)
 
-                        
+                
 
-class red_corr:
-	
+class interp:
+#Valenti style integration (trapezoidal)
+	def fl_int(self,flarr):
+           for i in range(nfilt):
+                   dist=lamb[i+1]-lamb[i]
+                   fluxmean=0.5*(flarr)
+                   fl_int+=fluxmean*dist
 
 
