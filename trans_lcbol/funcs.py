@@ -25,13 +25,13 @@ class dist:
                 return ff*mpc2
 class interp:
 #Valenti style integration (trapezoidal)
-	def fl_int(self,m):
+	def fl_int(self,f,m, filt):
            fl_int=0
            lamb=pbin[:,1].astype('float32')
-           for i in range(nfilt-1):
-                   filt=flux_conv().all_time(f, )
-                   dist=lamb[rr==m1][0]-lamb[rr==m][0]
-                   fluxmean=0.5*(flarr)
+           filt=flux_conv().all_time(f,filt )
+           dist=lamb[m+1]-lamb[m]
+           fluxmean=0.5*(filt)
            #fl_int+=fluxmean*dist
            return fluxmean*dist
 
+                        
