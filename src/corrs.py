@@ -15,6 +15,7 @@ class dec:
 		return out.beta, out.sd_beta
 if len(sys.argv)<6:
 	print "define the band for t2, whether the ejecta or nickel mass is being used and whether you want to see the correlation with the decline rate"
+	print "Usage: python"+sys.argv[0]+"\t <ni file> <ejm file> <band> <ejm/dm15> <param to corr with>"
 
 
 bd=sys.argv[3]
