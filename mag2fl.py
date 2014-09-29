@@ -7,16 +7,16 @@ from scipy.stats import pearsonr
 import math
 import sys
 import pickle as pc
-h='/home/sdhawan/pap_files/CSP_Photometry_DR2/'
+h='/Users/lapguest/csp_sn/CSP_DR2/'
 tl='opt+nir_photo.dat'
 #disf=loadtxt('/home/sdhawan/csp_dist.txt', dtype='string')
 #decl=loadtxt('../tests_paper/ni/files_snpy/tmax_dm15.dat', dtype='string')
 #filt=sys.argv[2]
 #zp=6.322e-11
 #wsset=loadtxt('../tests_paper/csp_sn/sec_max_files/y_sec_max_csp.dat', dtype='string')
-tmax=loadtxt('/home/sdhawan/tests_paper/ni/files_snpy/tmax_dm15.dat', dtype='string')
-pt='/home/sdhawan/bol_ni_ej/s14_files/'
-pt1='/home/sdhawan/tests_paper/csp_sn/sec_max_files/'
+tmax=loadtxt('/Users/lapguest/all_paper/files_snpy/tmax_dm15.dat', dtype='string')
+pt='/Users/lapguest/bol_ni_ej/s14_files/'
+pt1='/Users/lapguest/csp_sn/sec_max_files/'
 class conv:					#class reads in the dat file and stores it as a python dictionary. the second function							#converts dicts to a panel after converting them to dataframes
 	def rd_lc(self, sn, band):
 		f=open(h+sn+tl, 'r')
@@ -46,9 +46,10 @@ class conv:					#class reads in the dat file and stores it as a python dictionar
 			data[i]=DataFrame(self.rd_lc(sn, i))
 		pn=Panel(data)
 		return pn
-	def rd_col(self, sn):
-		cc=pc.load(open('/home/sdhawan/col_rise/col_curve_csp.txt', "rb"))
-		return cc[sn]
+"""
+	#def rd_col(self, sn):
+	#	cc=pc.load(open('/Users/lapguest/col_rise/col_curve_csp.txt', "rb"))
+	#	return cc[sn]
 class m2f:
 	def dm(self, sn):
 		return float(disf[disf[:,0]==sn][0][1])
@@ -79,9 +80,10 @@ class m2f:
 		return m
 	#def trap(self, snar, wvarr):
 		#return (sum(snar)*2-snar[0])*(wvarr[-1]-wvarr[0])/4.0
+
 class spl_fit:
 	def rd_cfa(self, sn, band):
-		pt='/home/sdhawan/bol_ni_ej/vel_decl/cfa_lc/'
+		pt='/Users/lapguest/bol_ni_ej/vel_decl/cfa_lc/'
 		lc=pc.load(open(pt+sn+'_lc.txt', "rb"))
 		bb={}
 		bb['ph']=lc['ph'+band]
@@ -110,7 +112,7 @@ class spl_fit:
 		m=np.linalg.lstsq(a, mag)[0]
 		return m
 class rdbol:
-	pt='/home/sdhawan/bol_ni_ej/'
+	pt='/Users/lapguest/bol_ni_ej/'
 	b14=np.loadtxt(pt+'sub_b14_red.txt', dtype='string')	
 	def fread(self, sn):
 		fout=open(self.pt+'ybollc/'+sn+'_lc_bol.dat','r')
@@ -130,7 +132,7 @@ class t2corr:
 		ar2=[float(l[l[:,0]==i[0]][0][19]) for i in t if i[0] in l[:,0]]
 		return ar1, ar2
 class interp:
-	pt='/home/sdhawan/bol_ni_ej/'
+	pt='/Users/lapguest/bol_ni_ej/'
 	lp=np.loadtxt(pt+'lpeak_m56ni.dat', usecols=(1, 3, 4, 7))
 	def filt_conv(self):
 		l=self.lp
@@ -175,7 +177,7 @@ print interp().filt_conv()
 #print rdbol().fread('SN2007as')
 
 
-
+"""
 
 
 

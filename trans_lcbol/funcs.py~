@@ -1,0 +1,15 @@
+import numpy as np
+
+
+
+class flux_conv:
+	def spt_conv(mag, zp):
+		a=25-mag
+		b=a/2.5
+		c=pow(10, b)
+		return zp*c
+
+class red_corr:
+	
+
+
