@@ -15,7 +15,7 @@ et=float(sys.argv[3])
 print band
 ufl=np.loadtxt('../tables/u_flags.txt', dtype='string', skiprows=1)
 tj=np.loadtxt(pt+band+'_sec_max_csp.dat', dtype='string')
-
+yj=np.loadtxt('../y2j.txt', dtype='string')
 def lbol_red(tval):
 	lb=np.array([float(i[1]) for i in ufl if i[0] in tj[:,0]])
 	elb=np.array([float(i[2]) for i in ufl if i[0] in tj[:,0]]) 
