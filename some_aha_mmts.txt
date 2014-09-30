@@ -9,7 +9,8 @@ However, the values published in Contardo '00 give a mean value of 2.6 mag/100da
 Its because we use BVRIJH and not just BVRI 
 
 
-
+2. thanks to the generosity of rahman amanullah, we have good late time J band data for 14J. Constraints on t2 of 1.15 days and an error on Ni mass of 0.12 M_Sun. 
+the values are consistent with Churazov 2014. 
 
 
 
