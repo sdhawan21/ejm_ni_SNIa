@@ -10,7 +10,14 @@ Its because we use BVRIJH and not just BVRI
 
 
 2. thanks to the generosity of rahman amanullah, we have good late time J band data for 14J. Constraints on t2 of 1.15 days and an error on Ni mass of 0.12 M_Sun. 
-the values are consistent with Churazov 2014. 
+the values are consistent with Churazov 2014.
+(details in the main.pdf draft)
+
+3. Distances/reddening estimation from this technique. If we believe the E(b-v) and R_v from Wang+2008, then we should get a distance measurement for M100 from the M_Ni (or Lbol, rather) of SN2006X
+
+for our analysis, with an Mni of 0.58 (Lbol=1.16), A_V=2.1 +/- 0.14 and m_v of 14.11 (+/- 0.01) the distance to M100 is 31.36 (+/-) 0.34
+
+
 
 
 
