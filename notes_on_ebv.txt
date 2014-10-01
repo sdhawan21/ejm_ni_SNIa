@@ -1,0 +1,11 @@
+The two main uncertainties in the Mni (logbol) calculations are the reddening and the distance measurement. 
+
+In this note, we focus on the reddening issues (the distances have uncertainties propagated from the redshift and are consistent with the measurements in the literature)
+Note: Above is true for objects anaylsed with distance measures in the literature (thus, none exist for CSP2)
+
+There are  a few objects with significantly different reddening estimates from Bruns '11, Burns '14, Kattner '12 and SNPy fits to light curves. 
+
+
+SN2008ia has significant galactic reddening which needs to be corrected for
+SN2006gt has a factor of 4 difference in the EBVhost between Kattner 2012 and Burns 2014
+SN2004gs has a higher host extinction than 0.1 and should be removed from sample
