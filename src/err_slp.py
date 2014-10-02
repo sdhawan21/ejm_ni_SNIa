@@ -51,7 +51,8 @@ def lbol_red(tval):
 	err=o.sd_beta
 	print len(t2), err, val
 	#do monte carlo for Mni
-	ar=[(np.random.normal(val[0], err[0])*np.random.normal(tval[0], tval[1])+np.random.normal(val[1], err[1]))/rn(2.0, 0.3) for i in range(3000)]
+	ar=[(np.random.normal(val[0], err[0])*np.random.normal(tval[0], tval[1])+np.random.normal(val[1], err[1]))/rn(1.99, 0.31) for i in range(3000)]
+
 	mx=val[0]*tval[0]; c=val[1]
 	return ar#mx+c, mx*((tval[1]/tval[0])+(err[0]/val[0])+err[1]), #np.array(ar)
 
