@@ -1,7 +1,7 @@
 """
 Distance estimation from intrinsic brightness using the relation calculated for 'low reddening sample'
 
-A_V estimates from Patat+2014 (Phillips+2014 has the original values, Nando's paper selects the subsample of interest)
+A_V estimates from Patat+2014 (Phillips+2014 has the original values, Nando's paper selects the subsample of interest; for highly reddened objects)
 
 """
 
@@ -49,6 +49,6 @@ def interp_mb():
 if len(sys.argv)==6:
 	qtty=sys.argv[3]	
 	print "The "+qtty+" estimate for SN2006X from our  calculation is \n"
-	print interp_mb()[0]+float(sys.argv[4])-float(sys.argv[5]), interp_mb()[1]+0.1+0.011, interp_mb()
+	print interp_mb()[0]+float(sys.argv[4])-float(sys.argv[5]), interp_mb()[1]+0.011, interp_mb()
 else:
 	print "Usage: python "+sys.argv[0]+"<Lbol peak > <e_Lbol> <qtty> <m_V> <a_V>"
