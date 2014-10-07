@@ -1,0 +1,23 @@
+Since we have the measured M_b (or v, by presuming a colour) from the Lbol (which came from t2), we can see how well this constrains the hubble constant.
+
+Using the value for alpha from wang+ 2008 (M100, SN2006X paper), we input the M_b.
+
+The output h_0 value is 64.58 +/- 7.12 km s-1 Mpc-1 (statistical)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
