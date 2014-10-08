@@ -1,12 +1,16 @@
 \documentclass{article}
+\title{Multivariate Linear Regression and the problem of multicollinearity}
 \begin{document}
+\maketitle
 Bivariate linear regression fits usin sklearn/statsmodels return a very high standard error on the parameter estimates $a_j$, $a_y$ and c
 where
 \begin{equation}
 L_{max}=a_j*t2_j+a_y*t2_y+c
 \end{equation}
 
-moreover, the y-band slope is -0.0072. A \emph{negative} slope implies a lower $L_{max}$ for a higher $t_2(Y)$ which is clearly not what the data suggests. The high standard error also means that the combined fit yields very high errors on $L_{max}$. This points to the problem of multicollinearity. We look for possible evidence for this and how to solve the problem
+moreover, the y-band slope is -0.0072. A \emph{negative} slope implies a lower $L_{max}$ for a higher $t_2(Y)$ which is clearly not what the data suggests. The high standard error also means that the combined fit yields very high errors on $L_{max}$. This points to the problem of multicollinearity (high correlation between predictors). We collect evidence to substantiate this and how to solve the problem
+
+
 {\bf Evidence for multicollinearity}
 
 \begin{itemize}
@@ -30,7 +34,7 @@ The above criteria for testing the presence of multicollinearity as seen in our 
 
 1. Partial Least Squares: Using the linear model package in scikit learn, we then look at the parameter estimates from a partial least squares. The problem of directionality still remains 
 
-2. Ridge Regression: This method uses an l2 regularization with a linear least squares. The parameter estimates are the same.
+2. Ridge Regression: This method uses an l2 regularization with a linear least squares. It returns the parameter estimates. The errors are calculated by bootstrap sampling. For small positive values of $\alpha$, the estimates are identical to the other methods. If we use a high $\alpha$, we get lower errors on the slope and intercept, however, the resulting 
 
 We find that none of the given solutions are adequate to give the desired parameter estimates. A PCA is an alternative, but it would reduce the dataset to a lower dimensionality, an equivalent of dropping one of the correlated regressors.
 
