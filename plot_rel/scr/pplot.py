@@ -47,6 +47,7 @@ def main():
            sp.tick_params('both', length=15, width=2)
            sp.tick_params('both', length=7, width=2, which='minor')
 	   plt.xlim(10, 40)
+	   plt.ylim(0.4, 1.8)
 	   frame=plt.gca()
 	   ytickar=frame.axes.get_yticklabels()
 	   print ytickar
@@ -57,6 +58,8 @@ def main():
 	   	#	ylab.set_visible(False)
 		#	ylab.set_fontsize(0.0)
 	   ytickar[0].set_visible(False)
+	   ytickar[-1].set_visible(False)
+	   print np.shape(ytickar), ytickar[0]
 	   if s[i]!=310:
 		for xlab in frame.axes.get_xticklabels():
 			xlab.set_visible(False)
@@ -77,7 +80,7 @@ def main():
 	plt.subplots_adjust(hspace=0)
 	plt.xlabel('$t_2(days)$', fontsize=45, labelpad=10)
 	plt.subplot(312)
-	plt.ylabel('$L_{max}$', fontsize=45, labelpad=10)
+	plt.ylabel('$L_{max} (10^{43}erg s^{-1})$', fontsize=40, labelpad=5)
 	plt.savefig('lbolt2_bf.pdf')
 
 main()

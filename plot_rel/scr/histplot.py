@@ -12,6 +12,9 @@ from scipy.stats import pearsonr
 
 fp=FontProperties(family='times new roman', size=25)
 inp=np.loadtxt("vals.txt")
+"""
+first function deals with plotting the histogram for the different methods
+"""
 def plot_hist():
 	
 	plt.rcParams['axes.linewidth']=2.5
@@ -26,7 +29,7 @@ def plot_hist():
 	fil=['y', 'j', 'h']
 	s=[311,312,310]
 	f=['y', 'g', 'r']
-	lablist=["Arnett-var", "Arnett-fixed", "DDC"]
+	lablist=["var", "fixed", "DDC"]
 	for k in range(3):
 		print k
 		sp=plt.subplot(s[k])
@@ -34,16 +37,18 @@ def plot_hist():
            	sp.tick_params('both', length=15, width=2)
            	sp.tick_params('both', length=7, width=2, which='minor')
 		plt.xlim(0.2, 0.8)
+		plt.ylim(0.0, 8.0)
 	   	frame=plt.gca()
+	   	sp.yaxis.set_major_locator(MultipleLocator(3))
 	   	ytickar=frame.axes.get_yticklabels()
-	   	print ytickar
+	   	
 	   	for ylab in ytickar:
 	   	#if ylab!=ytickar[0]: #and ylab !=ytickar[-1]:
 	   		ylab.set_fontproperties(fp) 
 	   	#else:
 	   	#	ylab.set_visible(False)
 		#	ylab.set_fontsize(0.0)
-	   	ytickar[0].set_visible(False)
+	   	ytickar[0].set_visible(False); ytickar[-1].set_visible(False)
 	   	if s[k]!=310:
 			for xlab in frame.axes.get_xticklabels():
 				xlab.set_visible(False)
@@ -52,7 +57,7 @@ def plot_hist():
 	   		for xlab in frame.axes.get_xticklabels():
 	   			xlab.set_fontproperties(fp) 
 		plt.hist(inp[:,k], color=f[k], bins=np.arange(0.2, 0.8, 0.1), label=lablist[k], histtype='step', linewidth=2)
-		plt.legend(loc=2)
+		plt.legend(loc=2, prop={'size':35})
 		
 	plt.subplots_adjust(hspace=0)
 	plt.xlabel('$M_{^{56}Ni}$', fontsize=45, labelpad=10)
@@ -63,8 +68,8 @@ def plot_line():
 	er=np.loadtxt('vals_tab.tex', usecols=(1, 2), delimiter='&')[:,1]
 	plt.rcParams['axes.linewidth']=2.5
 	
-	plt.rcParams['xtick.major.pad']=4
-	plt.rcParams['ytick.major.pad']=4
+	plt.rcParams['xtick.major.pad']=7
+	plt.rcParams['ytick.major.pad']=7
 	#ni3=np.array([float(i[3][:-3]) for i in inp])
 	
 	#inp[:,3]=ni3; inp[:,1].astype('float32'); inp[:,2].astype('float32')
@@ -73,7 +78,7 @@ def plot_line():
 	fil=['y', 'j', 'h']
 	s=[211, 210]
 	f=['yD', 'rs']
-	lablist=["Arnett-var", "DDC"]
+	lablist=["var", "DDC"]
 	arr=[0, 2]
 	for k in range(2):
 		print k
@@ -82,6 +87,7 @@ def plot_line():
            	sp.tick_params('both', length=15, width=2)
            	sp.tick_params('both', length=7, width=2, which='minor')
 		plt.xlim(0.2, 0.8)
+	   	plt.ylim(-0.3, 0.3)
 	   	frame=plt.gca()
 	   	ytickar=frame.axes.get_yticklabels()
 	   	
@@ -89,7 +95,8 @@ def plot_line():
 	 
 	   		ylab.set_fontproperties(fp) 
 	   		
-	   	ytickar[0].set_visible(False)
+	   	ytickar[0].set_visible(False) 
+	   	ytickar[-1].set_visible(False)
 	   	if s[k]!=210:
 			for xlab in frame.axes.get_xticklabels():
 				xlab.set_visible(False)
@@ -105,12 +112,12 @@ def plot_line():
 	   	
 	   	print res.predict(0.7), er
 		plt.errorbar(inp[:,1], dif, er, fmt=f[k], ms=15, linewidth=2.5, label=lablist[k])
-		plt.legend(loc=2, numpoints=1)
-		plt.ylabel('$Dif$', fontsize=35, labelpad=4)
+		plt.legend(loc=2, numpoints=1, prop={'size':35})
+		plt.ylabel('$Diff$', fontsize=35, labelpad=4)
 	
 	
 	plt.subplots_adjust(hspace=0)
-	plt.xlabel('$M_{^{56}Ni}(ar-fixed)$', fontsize=30, labelpad=7)
+	plt.xlabel('$M_{^{56}Ni}(fixed)$', fontsize=30, labelpad=7)
 	plt.savefig('dif_ni_comp.pdf')
 
 def lmax_scat():
@@ -155,7 +162,50 @@ def lmax_scat():
    	plt.ylabel('$L_{max}$(J)-$L_{max}$(Y)', fontsize=35, labelpad=5)
    	plt.xlabel('$L_{max}(J)$',  fontsize=35, labelpad=5)
 	plt.savefig('lmax_scat.pdf')
+
+def  lmax_est_hist():
+	filt=['y', 'j']
+	c=['y', 'g']
+	s=[211, 210]
+	fig=plt.figure(figsize=(12, 18))
+	plt.rcParams['axes.linewidth']=2.5
+	
+	plt.rcParams['xtick.major.pad']=9
+	plt.rcParams['ytick.major.pad']=6
+	for k in range(2):
+		infile=np.loadtxt('../../out_files/new_lbolhist_'+filt[k]+'.txt', usecols=(2, 1))
+		sp=plt.subplot(s[k])
+		sp.minorticks_on()
+           	sp.tick_params('both', length=15, width=2)
+           	sp.tick_params('both', length=7, width=2, which='minor')
+		plt.xlim(0.6, 1.6)
+		plt.ylim(0.0, 10.0)
+	   	frame=plt.gca()
+	   	sp.yaxis.set_major_locator(MultipleLocator(3))
+	   	ytickar=frame.axes.get_yticklabels()
+	   	
+	   	for ylab in ytickar:
+	 
+	   		ylab.set_fontproperties(fp) 
+	   		
+	   	#ytickar[0].set_visible(False)
+	   	if s[k]!=210:
+			for xlab in frame.axes.get_xticklabels():
+				xlab.set_visible(False)
+				xlab.set_fontsize(0.0)
+	   	else:
+	   		for xlab in frame.axes.get_xticklabels():
+	   			xlab.set_fontproperties(fp) 
+		plt.hist(infile[:,1], color=c[k], bins=np.arange(0.6, 1.6, 0.1))
+		plt.annotate(upper(filt[k]),xy=(0.1, 0.8), xycoords="axes fraction", fontsize=35, weight='bold')
+		plt.ylabel('$N_{SN}$', fontsize=35)
+	plt.xlabel('$L_{max}$', fontsize=35)
+	plt.subplots_adjust(hspace=0)	
+	plt.savefig('lmax_est_hist.pdf')
+			
 def main():
-	#plot_line()
-	lmax_scat()
+	plot_line()
+	plot_hist()
+	#lmax_scat()
+	#lmax_est_hist()
 main()
