@@ -22,6 +22,8 @@ print band
 
 #input files 
 ufl=np.loadtxt('../tables/u_flags.txt', dtype='string', skiprows=1)
+if sys.argv[5]=='fl':
+	ufl=ufl[ufl[:,-1]=='Y']
 tj=np.loadtxt(pt+band+'_sec_max_csp.dat', dtype='string')
 y2j=np.loadtxt('../y2j.txt', dtype='string')
 y2j=np.loadtxt(pt+'y_sec_max_csp.dat', dtype='string')
@@ -76,8 +78,10 @@ def lbol_red(tval):
 	#define Nsamp
 	nsamp=100
 	
+	
+	fac=int(sys.argv[6])
 	#perform least-squares
-	rd=RealData(t2, lb, sx=et2, sy=elb)
+	rd=RealData(t2, lb, sx=et2, sy=elb*fac)
 	def f(B,x):
 		return B[0]*x+B[1]
 	f=Model(f)
@@ -85,9 +89,12 @@ def lbol_red(tval):
 	o=out.run()
 	val=o.beta
 	err=o.sd_beta
+	print "The total number of NS, errs, best fit values and pearsonr values are"
 	print len(t2), err, val, pearsonr(lb, t2)
-	arr=np.vstack([t2, et2, lb, elb]).T
 	
+	
+	arr=np.vstack([t2, et2, lb, elb]).T
+	#np.savetxt('../out_files/bivar_regress.txt', arr, fmt='%s')
 	""" 
 	spline fits 
 	"""
@@ -97,6 +104,8 @@ def lbol_red(tval):
 			ests.append(spl_fit(arr, tval[0]))
 		except:
 			tval
+			
+			
 	#do monte carlo for Mni (using Arnett+fixed rise)
 	ar=[(np.random.normal(val[0], err[0])*np.random.normal(tval[0], tval[1])+np.random.normal(val[1], err[1]))/rn(2.0, 0.30) for i in range(3000)]
 
@@ -117,7 +126,7 @@ def main():
 	ar, ests=lbol_red([v, ev])
 	print np.mean(ar), np.std(ar), np.mean(ests), np.std(ests)#, min(ar), max(ar)#np.mean(ar)/2, (np.mean(ar)/2)*((np.std(ar)/np.mean(ar))+(0.3/2.0))
 	
-if len(sys.argv)==5:
+if len(sys.argv)==7:
 	main()
 else:
-	print "Usage: python"+sys.argv[0]+"<band> <t2 (obj)> <et2(obj)> <make combine>"
+	print "Usage: python"+sys.argv[0]+"<band> <t2 (obj)> <et2(obj)> <make combine> <flags> <factors on errors>"
