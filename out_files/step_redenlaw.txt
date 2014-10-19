@@ -1,0 +1,7 @@
+1. Mni from t2 for 2014J: 0.57 M_odot
+
+2. mni to lbol using arnett's rule 1.17e43 erg/s
+
+3. lbol to lbflux: ratios
+
+4. 

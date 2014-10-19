@@ -1,0 +1,6 @@
+Combined y and j band data fit using bivariate linear regression from statsmodels in python
+
+(alternative is sklearn, but the arrays dont seem to be of the right shape)
+
+
+

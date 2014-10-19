@@ -1,0 +1,21 @@
+Bruno's idea to use the absolute magnitude measurements for the highly reddened 5 (esp. 86G given its proximity) to measure a distance to the host. 
+
+Formula:
+
+m_B(obs)=M_B(abs)+mu+A_V
+=>
+m_B-M_B-A_V=mu
+
+m_B---> from LC fit 
+A_V---> NaID lines (? see Phillips et al. [1987])
+M_B ---> t2-Mni relation, gives bolometric peak and B-peak 
+
+
+
+
+
+
+
+
+
+
