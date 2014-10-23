@@ -1,0 +1,24 @@
+H0 evaluated using Type Ia supernovae with Cepheid calibrated distances
+
+log H0= 0.2*(M_V+alpha)
+
+Monte Carlo simulations for errors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
