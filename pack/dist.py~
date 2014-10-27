@@ -27,10 +27,8 @@ def h0_nocosm(dl, z):
 	return c*z/dl 
 def arr_crt(fil1, fil2):
 	a1=np.loadtxt(fil1, dtype='string')
-	a2=np.loadtxt(fil2, dtype='string')
-	arr1=[float(i[1]) for i in a1 if i[0] in a2[:,0]]
-	arr2=[float(a2[a2[:,0]==i[0]][0][1]) for  i in a1  if i[0] in a2[:,0] ]
-	return arr1, arr2
+	a2=np.loadtxt(fil1, dtype='string')
+	return 
 
 
 

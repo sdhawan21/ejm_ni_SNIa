@@ -4,31 +4,13 @@ import numpy as np
 
 rn=np.random.normal
 class bol_func:
-	"""
-	Class to store all functions required for evaluating parameters from bolometric light curves (calculated using mklcbol.pro)
-
-	Functions also to calculate the rise from half maximum a la contardo 2000
-
-
-	"""
-
 	def bolpeak(self, fil):
-		"""
-		Interpolate to find bolometric peak ##TOADD: exceptions for when the peak is not measured
-		
-		note: written on top of interp1d from scipy.interpolate (boss function it is!)
-		"""
 		lc=np.loadtxt(fil)
 		ter=interp1d(lc[:,0], lc[:,1], kind='cubic')
 		l=np.linspace(lc[:,0].min(), lc[:,0].max())
 		gpl=ter(l)
 		return max(gpl), l[gpl==max(gpl)][0]
 	def dm15_bol(self,fil):
-
-		"""
-
-		Delta m 15 for the bolometric light curve 
-		"""
 		lc1=np.loadtxt(fil)
 		
 		sp=interp1d(lc1[:,0], lc1[:,1], kind='cubic')
@@ -60,34 +42,17 @@ def spl_fit(arr, val):
 	l1=abs(l-val)
 	return gpl[l1==min(l1)][0]
 def arn_coef(rt, alp=1):
-	"""
-	For a given rise time, calculate the coefficient for the relation between Nickel mass and peak bolometric luminosity (arnett's rule, instantaneous energy deposition is output energy at max )
-	
-
-	Default alpha is 1 (arguments in Branch+ 1992, stritzinger 2006)
-	"""
-
 	eni=6.45e43*np.exp(-rt/8.8)+1.45e43*np.exp(-rt/111.1)
-
 	return alp*eni/1e43
 
-def arn_coef_mc(n, rt=[19, 3], alp=1):
-	"""
-	n realisations of the coefficient from arnett's rule
-
-	rise time value, default from Stritzinger+
-
-	"""
-
-	ar=[arn_coef(rn(rt[0], rt[1]), alp=1) for k in range(n)]	
-
+def arn_coef_mc(n, rt=[19, 3]):
+	ar=[arn_coef(rn(rt[0], rt[1])) for k in range(n)]	
 	return np.mean(ar), np.std(ar)
 
 def t_half_rise(fil, kind):
 	"""
 	Calculate the time to rise to max from half the luminosity 
 	
-	kind: spline, polyfit
 	"""
 	
 	peak=bol_func().bolpeak(fil); tmax=peak[1]
