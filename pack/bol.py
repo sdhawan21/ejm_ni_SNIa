@@ -23,6 +23,18 @@ class bol_func:
 		l=np.linspace(lc[:,0].min(), lc[:,0].max())
 		gpl=ter(l)
 		return max(gpl), l[gpl==max(gpl)][0]
+	
+	def err_peak(self, arr):
+		real=rn(arr[:,1], arr[:,2])
+		ph=arr[:,0]	
+		
+		spl=interp1d(ph, real, kind='cubic')
+		l=np.linspace(ph.min(), ph.max())
+		
+		gpl=spl(l)	
+		return min(gpl), l[gpl==min(gpl)][0]
+
+
 	def dm15_bol(self,fil):
 
 		"""
@@ -49,6 +61,56 @@ class bol_func:
 			return max(gp)-m15#np.log10(max(gp))-np.log10(m15)	
 		else:
 			return 99.0
+	def late_decl(self, arr1, ran=[200, 400]):
+		arr=arr1[(arr1[:,0]>ran[0]) & (arr1[:,0]<ran[1])]
+		if len(arr)>=4:
+			A=np.vstack([arr[:,0], np.ones(len(arr))]).T
+			m=np.linalg.lstsq(A, arr[:,1])[0]
+			return m
+		else:
+			return [99.0, 99.0]
+class mc:
+	"""
+	Class of MC functions for testing distributions and non-gaussian behaviour
+	"""
+	def ar_crt(self, n,	t0=[1., 2.]):
+		ar=[rn(t0[0], t0[1]) for i in range(n)]
+		return ar
+	
+	def rel_ni(self, mb,n):
+		ar=[pow(10, -0.4*(rn(mb[0], mb[1])+rn(19.841, 0.020))) for k in range(n)]
+		return ar
+
+
+
+
+class reden:
+	
+	b14=np.loadtxt("/home/sdhawan/bol_ni_ej/burns14_ebv.tex", dtype='string', delimiter='&')
+	def b14_av(self, SN):
+		bf=self.b14
+		row=bf[bf[:,0]==SN+' '][0]
+		try:
+			
+			ebv=float(row[5][2:7])
+			
+			rv=float(row[7][2:5])
+			
+			return ebv*rv
+		except:
+			return "There is no R_v with this method"
+	def b14_sbv(self, SN):
+		bf=self.b14
+		
+		try:
+			row=bf[bf[:,0]==SN+' '][0]
+			ebv=float(row[3][1:6])
+			
+				
+			return ebv
+		except:
+			return 99.0	#what a failed attempt at trying to amuse yourself
+
 def spl_fit(arr, val):
 	"""
 	interpolate value for Nickel mass
@@ -118,7 +180,10 @@ def t_half_rise(fil, kind):
 		thalf=lp[abs(magval-mhalf)==min(abs(magval-mhalf))]
 		
 		return thalf
-	
+def scal14_ni(x1, n):
+	ar=np.array([rn(x1[0], x1[1])*rn(0.100, 0.020)+rn(0.478, 0.023) for k in range(n)])
+	return np.mean(ar), np.std(ar)	
+
 
 
 
