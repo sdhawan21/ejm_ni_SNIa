@@ -1,3 +1,32 @@
+"""
+Bayesian parameter estimatino for linear regression.
+
+Uses affine invariant mcmc package called emcee (Foreman-Mackey+ 2012/13)
+More theory in Hogg + 2010
+
+Explanation for why bayesian parameter estimation is unbiased see Kelly+ 2007
+
+Uses highest posterior density for best estimate, NOT mean (hpd from biopython)
+
+
+
+Arguments 
+	1: file with input parameters (lmax, elmax, t2, et2)
+	2: Name of SN for which Ni 56 mass is to be calculated
+	3: Whether any cuts on the flags are to be made
+
+
+Output:
+	The printed outputs should be explanatory, nonetheless
+	1. upper, lower errors & slope
+	2 ."" "" "" intercept
+	3. & 4. Nickel mass from samples (mean and std), same but with hpd and asymmetric errors
+
+Author: Suhail Dhawan, ESO (jeez, do you have to)
+
+
+"""
+
 import numpy as np
 import emcee
 import matplotlib.pyplot as plt
@@ -14,11 +43,16 @@ import triangle
 
 
 def main():
-
+	"""
+	everything written in main function. Doesnt seem to be optimal structure
+	"""
 	infile=np.loadtxt(sys.argv[1], usecols=(1, 2, 3, 6, 5), skiprows=1)
+	
 	#uses the "v. low reddening flags"
+	#load the last column of the file which gives the Y/N flags	
 	fl=np.loadtxt(sys.argv[1], usecols=(0, -1), skiprows=1, dtype='string')[:,1]
 
+	#do you want to use the flags?
 	if sys.argv[3]=='fl':
 		infile=infile[fl=='Y']
 	ndim = 2
@@ -31,7 +65,7 @@ def main():
 	y=infile[:,0]; yerr=infile[:,1]
 
 	#uniform prior (Jeffreys prior) with strict cutoff
-
+	#prior on slope is between -10 to 10 and -10 to 15 for intercept
 	def lnprior(theta):
 	    m, b = theta
 	    if -10.0 < m < 10.0 and -10.0 < b < 15.0:
@@ -106,6 +140,7 @@ def main():
 	sn=sys.argv[2]
 
 	t2=float(val_table[val_table[:,0]==sn][0][1]); et2=float(val_table[val_table[:,0]==sn][0][2])
+	
 	def t2val(t2, et2):
 		ar=[(samples[i][0]*rn(t2, et2)+samples[i][1])/rn(2.0, 0.3) for i in range(len(samples))]
 		return ar
