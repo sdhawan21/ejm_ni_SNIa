@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\begin{document}
+\title{$H_0$ from NIR observations of SNIa}
+\maketitle
+The following is a brief summary of the steps in the analysis to estimate $H_0$
+
+\begin{itemize}
+
+\item Using the peak magnitude and $H_0$ from Folatelli+2010, I calculate the zero point for the given filter using equation \ref{eq:zp} (this value is independent of $H_0$ since both terms on the RHS depend on $H_0$)
+
+\item The $H_0$ value is calculated using equation \ref{eq:h0}
+
+\item For $M_{max}$ I use the model values provided (without the faintest model since we know that 91bg-likes are fainter even in the NIR). 
+
+\item Using the mean and error on the zero point and the mean and standard error on the mean on $M_{max}$ from the models, I create 10000 realisation of $H_0$ (similar to Cartier+2014)
+
+\item The final estimate is the mean and standard deviation of the resulting $H_0$ values
+
+\item For the systematic uncertainty, I propagate a 0.03 mag uncertainty in the zero point measurement. 
+
+\end{itemize}
+
+
+\begin{equation}
+\label{eq:zp}
+ZP= 25 - log(H_0)/0.2 + M_{peak} 
+\end{equation}
+
+
+
+\begin{equation}
+\label{eq:h0}
+H_0 = 10^{0.2*(M_{max}-ZP+25)}
+\end{equation}
+
+
+\end{document}
