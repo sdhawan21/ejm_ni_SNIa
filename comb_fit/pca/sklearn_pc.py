@@ -35,16 +35,15 @@ def main():
 	
 	l=pca.transform(X)
 	print "Doing an \t"+str(ncomp)+"\t component PCA \n\n----------------"
-	#l[:,0]-=pca.mean_[0]
 	
-	#l[:,1]-=pca.mean_[1]
-	
+	#linear regression fit
 	res=sm.OLS(inp[:,0], l).fit()
 	
 	t2_new=float(sys.argv[1])
 	err_t2_new=float(sys.argv[2])
-	
-	ar=np.array([rn(-0.0264, 0.004)*pca.transform([rn(t2_new, err_t2_new)])+np.mean(inp[:,0]) for k in range(1000)])
+		
+	#array for 1000 realisations with slope and slope error -0.0264 and 0.004
+	ar=np.array([(rn(-0.0264, 0.004)*rn(pca.transform([rn(t2_new, err_t2_new)]), 0.85)+rn(np.mean(inp[:,0]), 0.07))/rn(2.0, 0.3) for k in range(1000)])
 	
 	print "The estimated L_max is\t "+ str(np.mean(ar)) 
 	print "The error from the PCA is\t "+ str(np.std(ar))

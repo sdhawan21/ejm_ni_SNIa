@@ -1,7 +1,7 @@
 #generated on Tue Aug 26 13:46:02 2014 using mklcbol.pro
 #
 #INFILE   SN2008gp_lc_bolu.dat
-#NAME     sn2008gp
+#NAME     SN2008gp
 #AV_HOST  0.110 +/- 0.113
 #RV_HOST  3.190 +/- 0.290
 #AV_MW    0.301 +/- 0.000

@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import easygui as eg
+import sys
 
+
+band=sys.argv[1]
 from scipy.interpolate import interp1d
 
 tmax=56689.7
@@ -25,6 +28,6 @@ def spl_fit(band):
 		t_arr.append(t[0])
 	return np.array(t_arr)	
 def main():
-	t_arr=spl_fit('J')
+	t_arr=spl_fit(band)
 	return np.mean(t_arr), np.std(t_arr)
-main()
+print main()

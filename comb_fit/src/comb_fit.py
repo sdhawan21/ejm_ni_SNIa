@@ -2,10 +2,11 @@ import statsmodels.api as sm
 import numpy as np
 import matplotlib.pyplot as plt
 
+from time import time
 from sklearn import linear_model
 from mpl_toolkits.mplot3d import Axes3D
 #define path to the second maximum files
-
+start=time()
 pt='/home/sdhawan/tests_paper/csp_sn/sec_max_files/'
 
 #function to define arrays
@@ -20,11 +21,17 @@ def arr_def():
 	yt2=np.array([float(yb[yb[:,0]==i[0]][0][1]) for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
 	jt2=np.array([float(jb[jb[:,0]==i[0]][0][1]) for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
 	
+	#error arrays
+	elb=np.array([float(i[2]) for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
+	eyt2=np.array([float(yb[yb[:,0]==i[0]][0][2]) for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
+	ejt2=np.array([float(jb[jb[:,0]==i[0]][0][2]) for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
+	
 	#names of the SNae in the three arrays
 	nm=np.array([i[0] for i in fl if i[0] in jb[:,0] and i[0] in yb[:,0]])
 	
-	arr=np.vstack([nm, lb, yt2, jt2]).T
-	#np.savetxt('../../out_files/bivar_regress.txt', arr, fmt='%s')
+	arr=np.vstack([nm, lb, elb, yt2, eyt2,  jt2, ejt2]).T
+	arr1=np.vstack([nm, lb, yt2, jt2]).T
+	#np.savetxt('../../out_files/bivar_regress.txt', arr1, fmt='%s')
 	
 	#stack arrays in a shape that is readable by sm modules
 	x1=np.vstack([yt2, jt2]).T
@@ -57,3 +64,5 @@ def main():
 	#print res[1], res[2], res[3]
 	#plt.show()
 main()
+end=time()
+print "The complete combined fit code took" +str(end-start)+ "seconds"

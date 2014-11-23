@@ -1,7 +1,7 @@
 #generated on Fri Aug 22 11:27:42 2014 using mklcbol.pro
 #
 #INFILE   sn2005eq_lcbol.dat
-#NAME     sn2005eq
+#NAME     SN2005eq
 #AV_HOST  0.270 +/- 0.024
 #RV_HOST  3.190 +/- 0.290
 #AV_MW    0.222 +/- 0.000

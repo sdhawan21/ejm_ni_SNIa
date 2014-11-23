@@ -20,7 +20,7 @@ Output:
 	The printed outputs should be explanatory, nonetheless
 	1. upper, lower errors & slope
 	2 ."" "" "" intercept
-
+	3. & 4. Nickel mass from samples (mean and std), same but with hpd and asymmetric errors
 
 Author: Suhail Dhawan, ESO (jeez, do you have to)
 

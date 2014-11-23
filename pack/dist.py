@@ -420,5 +420,63 @@ def inv_tl_arr_crt(n, par):
 	
 	return arr2[:,1], arr2[:,0]
 
+def m55_arr_crt(fil, n, par):
+	a1=np.loadtxt('../files/late_lum'+fil+'.tex', dtype='string', delimiter='&')
+	arr2=[]
+	print par
+	if par[0] == 't':
+		
+		ff=np.loadtxt('../files/mod_tab'+fil+'-exp.tex', dtype='string', delimiter='&')
+	
+		for i in a1:
+		
+			try:
+				if i[0][:-1]+' ' in ff[:,0]:
+					print i[3][2:-2]	 
+					arr2.append([float(i[3][2:-2]), float(ff[ff[:,0]==i[0][:-1]+' '][0][n][2:6])])
+					
+				elif i[0][:-2]+'  ' in ff[:,0]:
+					print ff[ff[:,0]==i[0][:-2]+'  '][0][n][1:-1]
+					arr2.append([float(i[3][1:-1]), float(ff[ff[:,0]==i[0][:-2]+'  '][0][n][2:6])])
+					
+			except:
+				i[0]
+	
 
+	elif par == 'Dm15':
+		dm=np.loadtxt('/home/sdhawan/workspaces/nir_ref_report/files/dist_tab.tex', dtype='string', delimiter='&')
+		#arr2=[]
+		for i in a1:
+		
+			try:
+				#print i[0], dm[0][0]
+				if 'SN'+i[0][:-1]+'\t' in dm[:,0]:
+					
+					arr2.append([float(i[3][2:-2]), float(dm[dm[:,0]=='SN'+i[0][:-1]+'\t'][0][3][1:-1])])
+					
+				elif 'SN'+i[0][:-2]+'\t\t' in dm[:,0]:
+					arr2.append([float(i[3][2:-2]), float(dm[dm[:,0]=='SN'+i[0][:-2]+'\t\t'][0][3][1:-1])])
+				#arr1.append(a2[a2[:,0]==i[0]][0][n1][2:6])
+			except:
+				i[0]
+	
+	
+	elif par == 'TL':
+		a2=np.loadtxt('../files/lira_tab.tex', dtype='string', delimiter='&')
+		for i in a1:
+		
+			try:
+				#print i[0], dm[0][0]
+				if i[0] in  a2[:,0]:
+					
+					arr2.append([float(i[3][2:-2]), float(a2[a2[:,0]==i[0]][0][3])])
+					
+				elif i[0] in a2[:,0]:
+					arr2.append([float(i[3][2:-2]), float(a2[a2[:,0]==i[0]][0][3])])
+				#arr1.append(a2[a2[:,0]==i[0]][0][n1][2:6])
+			except:
+				i[0]
+	
+	arr2=np.array(arr2)
+	return arr2[:,1], arr2[:,0]
 

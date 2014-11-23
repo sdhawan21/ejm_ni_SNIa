@@ -78,7 +78,7 @@ def main():
 	    m, b = theta
 	    model = m * (x) + b
 	    ex=m*(x+xerr)+b-m*(x)-b	
-	    return -0.5*(np.sum( ((y-model)**2./((yerr)**2.+(ex)**2.))))
+	    return -0.5*(np.sum( ((y-model)**2./((yerr)**2.))))
 
 
 	#using bayes' theorem log posterior= logprior +loglikelihood

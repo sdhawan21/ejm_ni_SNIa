@@ -3,9 +3,11 @@
 The distance estimate for SN2006X from our  calculation is (the quantity in parenthesis is -M_B)
 
 31.3401059031 0.310331161809 (19.346330932071805, 0.20422962891266691)
+(30.91 +/- 0.14; Cepheid  31.1 +/- 0.2; z )
+
 
 For 2011fe, the distance to M101 is 
-29.26 +/- 0.26 
+29.26 +/- 0.26 (range of distance values in Matheson+ 2012 from different methods. From 28.90 to 29.30 mag) 
 
 
 

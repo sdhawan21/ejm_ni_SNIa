@@ -25,7 +25,7 @@ class bol_lc:
 		a=np.vstack([ph1, np.ones(len(ph1))]).T
 		y=np.linalg.lstsq(a, mag)[0]
 		return y
-	def odr_dec(self, sn, bands):
+	def odr_dec(self, sn, bands):			#uses an orthogonal distance regression library instead of numpy.linalg: allows errors to be propagated
 		lc1=self.rd_bol(sn, bands)
 		sp=interp1d(lc1[:,0], lc1[:,1], kind='cubic')
 		l=np.linspace(min(lc1[:,0]), max(lc1[:,0]), 100)
@@ -75,13 +75,24 @@ class t2_ni:
 		return g1[lnew==min(lnew)]
 class lpeak_ni:
 	def int_peak(self, lp):
-		r=np.loadtxt('lpeak_m56ni.dat', skiprows=5, usecols=(4, 1))
+		"""
+		
+		Interpolate the Nickel mass for a given peak bolometric luminosity and the DDC model parameters from Blondin+2013
+		
+		"""
+		
+		r=np.loadtxt('lpeak_m56ni.dat', skiprows=5, usecols=(7, 1))		#UBVRIJH 
 		arr_lp=np.linspace(min(r[:,0]), max(r[:,0]), 100)
 		fn=interp1d(r[:,0], r[:,1], kind='cubic')                                                                                                                           
 		new_arr=abs(arr_lp-lp)
 		garr=fn(arr_lp)
 		return garr[new_arr==min(new_arr)]
+	
 	def p2ni(self, sn, bands):
+		"""
+		Return the best estimate for Nickel mass from a given bolometric light curve. Uses a 19 \pm 3 day rise as in Stritzinger+2006
+		
+		"""	
 		t=bol_lc().rd_bol(sn, bands)
 		r1=np.random.normal(t[:,1], t[:,2])
 		p=interp1d(t[:,0], r1, kind='cubic')
@@ -130,6 +141,7 @@ for j in mni:
 	   #dec.append(bol_lc().dm15_bol('sn'+i[2:len(i)], 'BVRIJH'))#float(dm[dm[:,0]==i][0][3]))
 	except:
 		i
+#print lpeak_ni().int_peak(1.22), lpeak_ni().int_peak(1.18)
 dec=np.array(dec)		
 nm=np.array(nm)
 fout=open('ni_dm15.txt', "a")

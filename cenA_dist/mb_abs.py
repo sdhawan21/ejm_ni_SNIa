@@ -51,4 +51,4 @@ if len(sys.argv)==6:
 	print "The "+qtty+" estimate for SN2006X from our  calculation is \n"
 	print interp_mb()[0]+float(sys.argv[4])-float(sys.argv[5]), interp_mb()[1]+0.011, interp_mb()
 else:
-	print "Usage: python "+sys.argv[0]+"<Lbol peak > <e_Lbol> <qtty> <m_V> <a_V>"
+	print "Usage: python "+sys.argv[0]+"<Lbol peak > <e_Lbol> <qtty> <m_V> <a_V/dist>"

@@ -113,7 +113,7 @@ def plot_line():
 	   	print res.predict(0.7), er
 		plt.errorbar(inp[:,1], dif, er, fmt=f[k], ms=15, linewidth=2.5, label=lablist[k])
 		plt.legend(loc=2, numpoints=1, prop={'size':35})
-		plt.ylabel('$Diff$', fontsize=35, labelpad=4)
+		plt.ylabel('$\Delta$', fontsize=35, labelpad=4)
 	
 	
 	plt.subplots_adjust(hspace=0)
@@ -204,8 +204,8 @@ def  lmax_est_hist():
 	plt.savefig('lmax_est_hist.pdf')
 			
 def main():
-	plot_line()
-	plot_hist()
+	#plot_line()
+	#plot_hist()
 	#lmax_scat()
-	#lmax_est_hist()
+	lmax_est_hist()
 main()
