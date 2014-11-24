@@ -1,3 +1,9 @@
+"""
+Script to calculate error on best fit slope & intercept
+
+
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
@@ -23,15 +29,21 @@ et=float(sys.argv[3])
 
 #input files 
 ufl=np.loadtxt('../tables/u_flags.txt', dtype='string', skiprows=1)
+
+#apply flags to last column?
 if sys.argv[5]=='fl':
 	ufl=ufl[ufl[:,-1]=='Y']
+#load the second maximum files
 tj=np.loadtxt(pt+band+'_sec_max_csp.dat', dtype='string')
 y2j=np.loadtxt('../y2j.txt', dtype='string')
 y2j=np.loadtxt(pt+'y_sec_max_csp.dat', dtype='string')
 
 #shorthand for function
 rn=np.random.normal
+
+#factor from command line for hubble constant
 fac=float(sys.argv[6])
+
 def spl_fit(arr, val):
 	"""
 	interpolate value for Nickel mass
@@ -43,14 +55,18 @@ def spl_fit(arr, val):
 	l1=abs(l-val)
 	return gpl[l1==min(l1)][0]
 	
+#how the distance modulus changes with H0
 def dist_fac(h0):
 	return (70/float(h0))**2
+
+#array creation function (sort of handy, but still verbose)
 def arr_crt(ufl, tj):
 	lb2=np.array([float(i[1]) for i in ufl if i[0] in tj[:,0]])
 	elb2=np.array([float(i[2]) for i in ufl if i[0] in tj[:,0]]) 
 	jt2=np.array([float(tj[tj[:,0]==i[0]][0][1]) for i in ufl if i[0] in tj[:,0]])
 	jet2=np.array([float(tj[tj[:,0]==i[0]][0][2]) for i in ufl if i[0] in tj[:,0]])
 	return lb2, elb2, jt2, jet2
+
 def lbol_red(tval):
 	"""
 	function to estimate Lbol from t_2
@@ -72,7 +88,9 @@ def lbol_red(tval):
 	if int(sys.argv[4])==1:
 		lb1, elb1, iyt2, iyet2=arr_crt(ufl1, y2j)
 		lb4, elb4, ijt2, ijet2=arr_crt(ufl2, y2j)
+		
 		lb1*=dist_fac(fac)	
+		
 		lb=np.concatenate([lb1, lb2, lb3, lb4]); elb=np.concatenate([elb1, elb2, elb3, elb4]); t2=np.concatenate([ iyt2, jt2, jt3, ijt2])
 		et2=np.concatenate([ iyet2, jet2, jet3, ijet2])
 	
