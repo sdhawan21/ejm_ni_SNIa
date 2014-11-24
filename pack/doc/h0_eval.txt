@@ -4,6 +4,10 @@ log H0= 0.2*(M_V+alpha)
 
 Monte Carlo simulations for errors
 
+---> Idea is to skip the cepheid distance calibration in order to remove a large component of the systematics in the error budget
+
+---> MJ from Stephane's models
+	. zero point from Folatelli+ 
 
 
 
