@@ -254,13 +254,7 @@ class linfits:
 		out=od.run()
 		return out.beta, out.sd_beta
 	def freq_yerr(self, arr):
-		rd=RealData(arr[:,0], arr[:,1], sy=arr[:,2])
-		def f(B, x):
-			return B[0]*x+B[1]
-		f=Model(f)
-		od=ODR(rd, f, beta0=[1., 2.])
-		out=od.run()
-		return out.beta, out.sd_beta		
+		
 
 
 

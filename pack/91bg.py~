@@ -1,0 +1,22 @@
+"""
+	Module contains all functions required for 91bg-like analysis
+	
+"""
+import numpy as np
+
+from glob import glob
+class defspec:
+	infile=np.loadtxt('/home/sdhawan/bol_ni_ej/fast_decl/all91bg.txt', dtype='string')
+	def get_name(self, spec):
+		ls=[]
+		for row in spec:
+			ls.append(row.split())
+		return ls[0][1]
+	def pullspec(self, specdir, name):
+		sset=[]
+		for i in specdir:
+			nm=self.get_name(i)
+			if nm==name:
+				sset.append(i)
+		return sset
+		
