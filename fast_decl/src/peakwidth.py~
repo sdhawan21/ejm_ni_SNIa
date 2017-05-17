@@ -1,0 +1,60 @@
+"""
+Peak width in NIR as a diagnostic of the intrinsic luminosity of 91bg-like, 'dromedary'
+SN
+
+Idea: If the single maximum in the NIR for low-luminosity events is indeed a 'merger' of the two distinct maxima, then the intrinsic luminosity should reflect in the width of the single maximum, with a wider single maximum implying a brighter SN
+
+Implementation: Spline interpolation of the light curve to get a smoothed curve. 
+
+"Width" is defined as the phase range when the light curve goes from 0.5 fainters BEFORE maximum
+to 0.5 mag fainter AFTER. 
+
+inputs:
+--> Filter
+--> SN name
+
+Output:
+--> peak magnitude
+--> RHS
+---> the width
+
+"""
+
+from mag2fl import conv
+from scipy.interpolate import interp1d
+
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+def peak_eval(sn, pt, band):
+	tmar=np.loadtxt(pt+'tmax_dm15.dat', usecols=(0, 1), dtype='string')
+	lc=conv().rd_lc(sn, band)
+	tm=tmar[tmar[:,0]==sn][0][1]
+	ph=lc['MJD']-float(tm)
+	mag=lc[band]
+	
+	ll=interp1d(ph, mag, kind='cubic')
+	
+	t=np.linspace(min(ph), max(ph), 100)
+	inmag=ll(t)
+	
+	tirmin=t[inmag==min(inmag)][0]
+	
+	pmmag=inmag[t<tirmin]; pmph = t[t<tirmin] 
+	print min(inmag)
+	lwing = pmph[abs(pmmag-min(pmmag)-0.5)==min(abs(pmmag-min(pmmag)-0.5))] 
+	
+	posmag = inmag[t>tirmin]; posph = t[t>tirmin]
+	
+	rwing =  posph[abs(posmag-min(posmag)-0.5)==min(abs(posmag-min(posmag)-0.5))]
+	print rwing
+	return rwing[0]-lwing[0], ph, mag
+def main():
+	
+	sn=sys.argv[2]; band=sys.argv[1]
+	pt='/home/sdhawan/tests_paper/ni/files_snpy/'
+	ph=peak_eval(sn, pt, band)
+	print ph[0]
+	plt.plot(ph[1], ph[2], 'r^')
+	plt.show()
+main()

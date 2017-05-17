@@ -1,0 +1,9 @@
+For the 5 highred SNe in the Ni masses paper I calculated the bolometric light curves using the reddening corrections given in the Burns+ 2014 paper
+(Rv from multiband light curves)
+
+The following are the comparison results:
+
+SN		M(from bol)	M(from t2)
+SN2006X		0.49		0.56
+SN2005A 	0.49		0.56
+SN2008fp	0.58		0.62

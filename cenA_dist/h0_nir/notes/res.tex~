@@ -1,0 +1,21 @@
+\begin{table}
+\begin{center}
+\begin{minipage}{70mm}
+\caption{$H_0$ values as calculated from the models}
+\begin{tabular}{l|l|r|r}
+\\
+\hline
+Filt	& 	Mod & $H_0$ & err \\
+\hline
+Y	& DDC	& 75.16 & 2.37	\\
+J	& DDC	& 77.94	& 2.52\\
+H	& DDC	& 81.95	& 1.61\\
+J	& PDD	& 70.15 & 1.30	\\
+H	& PDD	& 76.99 & 1.29	\\
+J	& SCH	& 85.10	& 2.17	\\
+H	& SCH	& 88.28	& 1.29	\\
+\hline
+\end{tabular}
+\end{minipage}
+\end{center}
+\end{table}

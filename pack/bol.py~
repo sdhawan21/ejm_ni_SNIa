@@ -1,7 +1,18 @@
+"""
+A set of classes and functions to analyse the bolometric light curves as computed from Stephane's code
+
+Also a set of generic functions that can be used as per convenience (e.g. ODR line fitting)
+
+
+"""
+
 from scipy.interpolate import interp1d
 from scipy.odr import *
 
+import os
 import numpy as np
+
+homept = os.path.expanduser("~")
 
 rn=np.random.normal
 class bol_func:
@@ -19,14 +30,22 @@ class bol_func:
 		
 		note: written on top of interp1d from scipy.interpolate (boss function it is!)
 		"""
+		
 		lc=np.loadtxt(fil)
 		ter=interp1d(lc[:,0], lc[:,1], kind='cubic')
 		l=np.linspace(lc[:,0].min(), lc[:,0].max())
 		gpl=ter(l)
+	
+	
+		#e = lc[:,2][abs(lc[:,1] - max(gpl)) == min(abs(lc[:,1] - max(gpl)))][0]
 		if max(gpl) != lc[0][1]:
-			return max(gpl), l[gpl==max(gpl)][0]
+			return max(gpl), l[gpl==max(gpl)][0]#, e 
+	
+	
 		else: 
-			return 99.0, 99.0
+			return 99.0, 99.0#, 99.0
+	
+	
 	def err_peak(self, arr):
 		real=rn(arr[:,1], arr[:,2])
 		ph=arr[:,0]	
@@ -35,9 +54,13 @@ class bol_func:
 		l=np.linspace(ph.min(), ph.max())
 		
 		gpl=spl(l)	
-		return min(gpl), l[gpl==min(gpl)][0]
-
-
+		return max(gpl), l[gpl==min(gpl)][0]
+	def precalc_magerr(self, arr, n=10000):
+		ar = [err_peak(arr) for k in range(n)]
+		ar = np.array(ar)
+		
+		return np.mean(ar[:,0]), np.std(ar[:,0]) 
+		 
 	def dm15_bol(self,fil):
 
 		"""
@@ -90,7 +113,7 @@ class model_comp:
 		inval=np.loadtxt(self.inp, usecols=(1, qtt))
 		lpeak=sorted(inval[:,1]); mni=sorted(inval[:,0])
 		spl=interp1d(lpeak, mni, kind='cubic')
-		u=np.linspace(min(lpeak), max(lpeak))#; v=np.linspace(mni.min(), mni.max())
+		u=np.linspace(min(lpeak), max(lpeak), 500)#; v=np.linspace(mni.min(), mni.max())
 		gl=spl(u)
 		absl=abs(u-val)	
 		nivar=gl[absl==min(absl)]
@@ -112,7 +135,7 @@ class mc:
 
 class reden:
 	
-	b14=np.loadtxt("/home/sdhawan/bol_ni_ej/burns14_ebv.tex", dtype='string', delimiter='&')
+	b14=np.loadtxt(homept+"/bol_ni_ej/burns14_ebv.tex", dtype='string', delimiter='&')
 	def b14_av(self, SN):
 		bf=self.b14
 		row=bf[bf[:,0]==SN+' '][0]
@@ -171,6 +194,14 @@ def arn_coef_mc(n, rt=[19, 3], alp=1):
 
 	return np.mean(ar), np.std(ar)
 
+def rise_dm15(dm15):
+	return 16.5-5*(dm15-1.1)
+
+def rd_bol(sn, pt=homept+'/bol_ni_ej/lcbol_distrib/', suf='_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat'):
+	f = np.loadtxt(pt+sn+suf)
+	f[:,0] -= bol_func().bolpeak(pt+sn+suf)[1]
+	return f, bol_func().bolpeak(pt+sn+suf)
+	
 def t_half_rise(fil, kind):
 	"""
 	Calculate the time to rise to max from half the luminosity 
@@ -209,6 +240,33 @@ def t_half_rise(fil, kind):
 def scal14_ni(x1, n):
 	ar=np.array([rn(x1[0], x1[1])*rn(0.100, 0.020)+rn(0.478, 0.023) for k in range(n)])
 	return np.mean(ar), np.std(ar)	
+
+def err_comp(lbol, rise, rt=[19, 3],n=10000):
+	e = arn_coef_mc(n)[1]
+	pk = arn_coef(rt[0])
+	if rise:
+		ar = np.array([lbol[0]/rn(2, e) for k in range(n) ])	
+	else:
+		ar = np.array([rn(lbol[0], lbol[1])/pk for k in range(n)])
+
+	return np.mean(ar), np.std(ar)
+
+def err_varrise(lbol, rise, sn, rt=[19, 3],n=10000):
+
+	dmfile = np.loadtxt(homept+'/tests_paper/ni/files_snpy/tmax_dm15.dat', dtype='string')
+	dm15 = float(dmfile[dmfile[:,0]==sn][0][3])
+	
+	vrt = 16.5 + 5*(dm15 -1.1)
+	e = arn_coef_mc(n, rt=[vrt, 2.])[1]
+	pk = arn_coef(vrt)
+	print pk
+	if rise:
+		ar = np.array([lbol[0]/rn(pk, e) for k in range(n) ])	
+	else:
+		ar = np.array([rn(lbol[0], lbol[1])/pk for k in range(n)])
+
+	return np.mean(ar), np.std(ar)
+
 """
 def t2lmax(band):
 	l=np.loadtxt('out_files/lbolhist_'+band+'.txt', dtype='string')
@@ -254,7 +312,13 @@ class linfits:
 		out=od.run()
 		return out.beta, out.sd_beta
 	def freq_yerr(self, arr):
-		
+		rd=RealData(arr[:,0], arr[:,1], sy=arr[:,2])
+		def f(B, x):
+			return B[0]*x+B[1]
+		f=Model(f)
+		od=ODR(rd, f, beta0=[1., 2.])
+		out=od.run()
+		return out.beta, out.sd_beta		
 
 
 

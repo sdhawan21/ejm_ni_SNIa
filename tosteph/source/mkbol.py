@@ -1,0 +1,46 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+from astropy.io import ascii
+
+optical_lc=np.loadtxt('2004S_phot_opt.dat', dtype='string', delimiter='&', usecols=(0, 1,2,3,4,5))
+#print optical_lc, len(optical_lc)
+ir_lc = np.loadtxt('2004S_phot_ir.dat', dtype='string', delimiter='&', usecols=(0, 2, 3))
+fout = open('04s_bol.dat', 'w')
+
+opt_filt=['U', 'B', 'V', 'R', 'I']
+ir_filt = [ 'J', 'H']
+
+#sys.exit()
+fout.write(" #generated on Thu Oct 17 11:54:37 2013 using mklcbolinput.pro \n")
+fout.write( " #NAME  SN2004S \n" )
+fout.write(" #AV_HOST \t 0.00 +/- 0.06  \n")
+fout.write(" #RV_HOST \t 3.1 +/- 0.290\n")
+fout.write("  #AV_MW \t 0.313 +/- 0.000 \n")
+fout.write("#RV_MW  3.100 +/- 0.000\n")
+fout.write("#DIST_MOD 33.14 +/- 0.21 \n") 
+fout.write(" #NFILT "+str(len(opt_filt+ir_filt)))
+fout.write("\n #\n")
+
+
+for  i, filt in enumerate(opt_filt):
+	indexx = i+1
+	lc=optical_lc[:,[0, indexx]]
+	lc = [i for i in lc if '\no' not in i[1] ]
+	meas=len(lc)
+	
+	fout.write("#FILTER "+filt+"_Bessell - "+str(meas)+"  MEASUREMENTS (MJD MAG MAGERR)\n")
+	for ll in lc:
+		#print ll[1]
+		fout.write(str(ll[0][:7])+' '+str(ll[1][1:7])+' '+str(ll[1][10:14])+'\n')
+		
+for  i, filt in enumerate(ir_filt):
+	indexx = i+1
+	lc=ir_lc[:,[0, indexx]]
+	lc = [i for i in lc if "\no" not in i[1] ]
+	meas=len(lc)
+	fout.write("#FILTER "+filt+"_MKO - "+str(meas)+"  MEASUREMENTS (MJD MAG MAGERR)\n")
+	for ll in lc:
+		fout.write(ll[0][:7]+' '+ll[1][1:7]+' '+ll[1][10:14]+'\n')
+fout.close()

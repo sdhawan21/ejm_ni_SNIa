@@ -1,0 +1,14 @@
+digraph hfl_calib
+{
+
+	Nohfl [label= "Select z < 0.01 SN", shape="ellipse"]
+	
+	CalcMni[label = "Calculate Bolometric LC, multiply by distance", shape="box"]
+	Nohfl -> CalcMni
+	
+	Corr [label = "correlate Mni with t2", shape = "box" ]
+
+
+
+
+}

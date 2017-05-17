@@ -1,0 +1,21 @@
+pro spl_lc
+seed=12312
+ff=file_search("/home/sdhawan/bol_ni_ej/spl_lc/idl_lc/*.txt")
+t2arr=[]
+farr=[]
+for i=0, n_elements(ff)-1 do begin
+	readcol, ff(i), ph, mag, mage
+	ph1=ph(where (ph gt 15 and ph lt 55))
+	mag1=mag(where (ph gt 15 and ph lt 55))
+	ran=randomn(seed, 1)	
+	IF n_elements(ph1) GT 4 THEN BEGIN
+		spl=cspline(ph1, mag1, ph1)
+		t2=ph1(where(mag1 eq min(mag1)))
+		t2arr=[t2arr, t2]
+		farr=[farr, ff[i]]	
+	ENDIF
+endfor
+writecol, "t2_idl_test.txt", farr, t2arr
+
+stop
+end

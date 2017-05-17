@@ -1,0 +1,53 @@
+#generated on Thu Dec 17 18:05:10 2015 using mklcbol.pro
+#
+#INFILE   iptf13ebh_bol.dat
+#NAME     iptf13ebh'
+#AV_HOST  0.000 +/- 0.000
+#RV_HOST  0.000 +/- 0.000
+#AV_MW    0.000 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 33.630 +/- 0.180
+#NFILT    9 (u_CSP,B_CSP,g_CSP,V_CSP,r_CSP,i_CSP,Y_CSP,J_CSP,H_CSP)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 56611.141              NaN              NaN
+ 56612.141              NaN              NaN
+ 56613.121              NaN              NaN
+ 56613.191              NaN              NaN
+ 56614.102              NaN              NaN
+ 56615.129              NaN              NaN
+ 56617.109              NaN              NaN
+ 56617.121              NaN              NaN
+ 56618.121              NaN              NaN
+ 56619.102              NaN              NaN
+ 56620.109              NaN              NaN
+ 56621.109              NaN              NaN
+ 56622.102              NaN              NaN
+ 56623.090              NaN              NaN
+ 56623.141              NaN              NaN
+ 56624.070              NaN              NaN
+ 56625.090              NaN              NaN
+ 56630.078              NaN              NaN
+ 56631.090              NaN              NaN
+ 56632.090              NaN              NaN
+ 56633.078              NaN              NaN
+ 56635.078              NaN              NaN
+ 56636.078              NaN              NaN
+ 56637.070              NaN              NaN
+ 56638.051              NaN              NaN
+ 56638.102              NaN              NaN
+ 56640.059              NaN              NaN
+ 56641.090              NaN              NaN
+ 56644.051              NaN              NaN
+ 56645.051              NaN              NaN
+ 56646.051              NaN              NaN
+ 56647.051              NaN              NaN
+ 56648.031              NaN              NaN
+ 56648.051              NaN              NaN
+ 56649.051              NaN              NaN
+ 56650.039              NaN              NaN
+ 56651.070              NaN              NaN
+ 56652.090              NaN              NaN
+ 56653.031              NaN              NaN
+ 56653.039              NaN              NaN
+ 56654.039              NaN              NaN

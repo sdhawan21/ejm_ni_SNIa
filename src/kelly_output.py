@@ -3,6 +3,7 @@ Using the idl save file from the Kelly 2007 code linmix_err.pro,
 estimate the slope and error as well as the Nickel mass
 """
 import numpy as np
+import matplotlib.pyplot as plt
 import triangle
 import sys
 
@@ -20,11 +21,13 @@ def main():
 	
 	f=np.loadtxt('../test/mcmc/redval.txt', dtype='string')
 	v=f[f[:,0]==sn][0] 
-
+	samples=np.vstack([inter, slope]).T
 	#return 0
 	ar=[(inter[i]+slope[i]*rn(float(v[1]), float(v[2])))/rn(2.0, 0.3) for i in range(len(inter))]
 	
 	ar=np.array(ar)
 	print "The median, upper and lower errors from the gibbs sampling are:",	np.median(ar), hpd.hpd(ar)[0]-np.median(ar), np.median(ar)-hpd.hpd(ar)[1] 
 
+	triangle.corner(samples)
+	plt.show()
 main()

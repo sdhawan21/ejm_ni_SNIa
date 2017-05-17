@@ -1,0 +1,33 @@
+#generated on Tue Dec 22 14:30:29 2015 using mklcbol.pro
+#
+#INFILE   99by_bol.dat
+#NAME     iptf13ebh
+#AV_HOST  0.000 +/- 0.000
+#RV_HOST  0.000 +/- 0.000
+#AV_MW    0.000 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 33.630 +/- 0.180
+#NFILT    8 (U_Bessell,B_Bessell,V_Bessell,R_Bessell,I_Bessell,J_MKO,H_MKO,K_MKO)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+  1304.670              NaN              NaN
+  1305.680              NaN              NaN
+  1306.670              NaN              NaN
+  1307.640              NaN              NaN
+  1308.630              NaN              NaN
+  1309.630              NaN              NaN
+  1310.730              NaN              NaN
+  1311.640              NaN              NaN
+  1312.700              NaN              NaN
+  1313.660              NaN              NaN
+  1314.650              NaN              NaN
+  1315.680              NaN              NaN
+  1316.650              NaN              NaN
+  1318.650              NaN              NaN
+  1320.710              NaN              NaN
+  1322.710              NaN              NaN
+  1324.640              NaN              NaN
+  1326.630              NaN              NaN
+  1327.670              NaN              NaN
+  1328.640              NaN              NaN
+  1330.670              NaN              NaN

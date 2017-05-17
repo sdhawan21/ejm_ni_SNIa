@@ -1,0 +1,17 @@
+#generated on Tue Dec  8 18:21:57 2015 using mklcbol.pro
+#
+#INFILE   SN2008ad.dat
+#NAME     SN2008ad
+#AV_HOST  0.554 +/- 0.020
+#RV_HOST  1.700 +/- 0.000
+#AV_MW    0.033 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 36.738 +/- 0.100
+#NFILT    4 (B_Bessell,V_Bessell,R_Bessell,I_Bessell)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 54507.434   4.31412633E+42   3.09641425E+41
+ 54508.473   3.97315351E+42   2.85134172E+41
+ 54508.477   3.97194048E+42   2.85046991E+41
+ 54508.480   3.97073209E+42   2.84960147E+41
+ 54509.445   3.68664504E+42   2.64544648E+41

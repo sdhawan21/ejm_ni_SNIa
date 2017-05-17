@@ -1,0 +1,29 @@
+import numpy as np
+
+h=np.loadtxt('11fe_t13.dat', skiprows=1)
+
+fout=open('SN2011fe_late.dat', 'w')
+bands=['U', 'B', 'V', 'R', 'I']
+for k in range(5):
+	lcslice=h[:,[0, (1+2*k), (2*k+2)]]
+	lcnorm=lcslice[lcslice[:,1]<99]
+	fout.write('#FILTER\t'+bands[k]+'_BESSELL\t '+str(len(lcslice))+"\t - MEASUREMENTS (MJD MAG MAGERR) \n")
+	for jj in lcnorm:
+		for l in jj:
+			fout.write(str(l)+' ')
+		fout.write('\n')
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

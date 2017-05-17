@@ -1,0 +1,88 @@
+This file contains information about the important files and sub-directories in bol_ni_ej/
+
+--------------------------------------------------------------------------
+The file Mni_lcbol.txt contains the Ni mass estimated values, error on mni and the peak bolometric luminosity.
+
+the third column is a flag for whether richard's 'preview file' contains a measured value for the object ('N' for all non-CSP)
+
+
+the peak bolometric luminosity is not uniform across filter combinations. some objects (eq. 04gu, 04gs, 05na) have only BVRI whereas objects like 05M have BVRIYJH. 
+
+11fe and other lit objects (eg. 02fk, 01ba, 02dj etc) have no Y band coverage 
+:(. however, the Y band flux near max is ~2-4% so there isn't much lost (the difference is captured by the DDC models)
+
+-----------------------------------------------------------------------------
+05/09
+'u_flags.txt' in tables/ directory is currently containing the updated information about the fits to the bolometric light curve and is used in further analysis 
+
+'pyfunc.py' compares errors to the values from Richard's file
+
+'paper_files' is probably the most (and only) appropriately named directory
+
+'comp_ddc' has the analysis for the DDC models confronted with Arnett's rule
+
+'eni_alph_arn.py' calculates the correlation coefficients for the different methods of mapping the bolometric luminosity to the Mni. there should be enough documentation to know what arguments are being used in the code
+
+'plot_rel/scr/' has a few useful files for plotting figure 1.
+
+
+-----------------------------------------------------------------------
+
+30/09
+'abu/' contains JHK_s light curves for SN2014J from Amanullah + (upto +47d)
+and the script to get out t2, et2 for the Ni mass estimates. 
+
+-----------------------------------------------------------------
+
+27/10
+
+'test/mcmc/' contains the scripts for MCMC sampling of the lmax and t2 relation to get the appropriate values for the slope with the upper and lower error bars
+
+'pack/' is the bolometric analysis 'package' with functions for spline interpolation. Also has the highest posterior distribution Bayesstats function 
+
+---------------------------------------------------------------------
+
+23/11
+
+'linmix_err.pro' Kelly 2007
+
+add appendix C or add to B about the details on the gibbs sampler
+-------------------------------------------------------------------
+01/12
+
+the plot for sbv versus Mni for fast decliners is in diag_plots/
+----------------------------------------------------------------------
+06/02
+
+test/evaltests/ has the script for different nimass calibrations 
+
+i.e. Dm15, bolometric with correction, and for some Mb and x1
+
+---------------------------------------------------------------------
+27/02
+
+all the 91bg-likes analysis is also simultaneously shifted to the source_nimass/ workspace. 
+--reddening errors seem realistic
+-----------------------------------------------------------------------
+03/03
+questions:
+a. do i need to remove the appendix section with the complete bayesian analysis (honestly, bruno is right, its overkill)
+b. Nickel mass errors and the final computation for table 6
+
+------------------------------------------------------------------------
+11/03
+More paper stuff:
+table 2 looks perfectly fine now. Work on the text post section 3. Language seems to be amiss.
+---------------------------------------------------------------------
+13.03
+
+'cfa_files/' has snoopy outputs of the cfa sn
+-------------------------------------------------------------------------
+08.04
+
+The unfortunate and inevitable has happened. There are two parallel versions of this repo on the desktop and laptop. Merge.
+
+-----------------------------------------------------------------------------
+17/08 
+
+Paper Submitted!!! 

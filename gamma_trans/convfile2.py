@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from glob import glob
+
+gl = sorted(glob('../abu/lc2fit*'))
+
+fout = open('2014j_ir.dat', 'w')
+
+farr=['H', 'J', 'K']
+for i, filename in enumerate(gl):
+	lc = np.loadtxt(filename, skiprows=8)
+	fout.write('#FILTER '+farr[i]+'_CSP - '+str(len(lc))+' MEASUREMENTS (MJD MAG MAGERR)\n')
+	for k in lc:
+		fout.write(str(k[0])+' '+str(k[1])+' '+str(k[2])+'\n')
+		
+fout.close()

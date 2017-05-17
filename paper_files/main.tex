@@ -1,0 +1,152 @@
+\documentclass{aa}
+\usepackage{graphicx}
+\usepackage[intlimits,sumlimits]{amsmath}
+\usepackage{deluxetable}
+\usepackage{times,epsfig} 
+\usepackage{natbib}
+\usepackage{amssymb}
+\bibpunct{(}{)}{;}{a}{}{,} % to follow the A&A style
+%for the bibliography at the end
+\bibliographystyle{aa} %style aa.bst
+\usepackage{amsmath}
+\usepackage[english]{babel}
+
+%-------------
+\newcommand{\beqa}{\begin{eqnarray}} 
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\Abst}[1]{\;#1}
+\newcommand{\bsub}{\begin{subequations}}
+\newcommand{\esub}{\end{subequations}}
+\newcommand{\beal}{\begin{align}}
+\newcommand{\ealn}{\end{align}}
+\newcommand{\Nif}{$\rm ^{56}Ni$} 
+\newcommand{\Cif}{$\rm ^{56}Co$}
+\newcommand{\Fif}{$\rm ^{56}Fe$}
+\newcommand{\ksm}{${\rm km~s^{-1}~Mpc^{-1}}$}
+\newcommand{\s}{M$_{\sun}$}
+\begin{document}
+%
+\title{Nickel mass estimates of Type Ia Supernovae from NIR data: Test case for heavily reddened objects
+}
+
+
+\titlerunning{$M_{^{56}Ni}$ for SNIa from NIR data}
+\authorrunning{TBD}%Stritzinger \& Sollerman}
+\author{\textbf{TBD}}%M.~Stritzinger\inst{1}
+ 	%\and J. Sollerman\inst{1,2}}
+
+
+\institute{European Southern Observatory, Karl Schwarzschild Strasse 2, Garching bei Munchen, Germany, 85748 \\
+\email{ @eso.org}
+\and  \\
+%\email{jesper@dark-cosmology.dk}
+} 
+
+\offprints{TBD}
+
+\abstract{}{To determine the relation between the amount of radioactive Nickel ($^{56}Ni$) produced in Type Ia supernovae (SNIa) and the timing of the second maximum ($t_2$) in the Near Infrared (NIR; $YJH$) bands and to  extrapolate Nickel mass values for highly reddened SNIa using this relation} 
+{We measure the  (pseudo)-bolometric luminosity at peak from the ultraviolet optical Near Infrared (UVOIR) light curves  and use it to derive a value of amount of $^{56}Ni$ produced ($M_{^{56}Ni}$) for a 'low-reddening' sample of objects from the literature. These objects have low extinction from the host galaxy dust and hence, there are effects from presuming a reddening law are smaller.   }
+{We find a strong correlation between the peak bolometric luminosity ($L_{max}$) and $t_2$ in the $Y$ and $J$ bands and a weaker trend in the $H$ band. We use this empirical relation to derive $L_{max}$ and therefore,  $M_{^{56}Ni}$ for test case SNae with high extinction. This allows us to have a $M_{^{56}Ni}$ value which is independent of the reddening law applied. We also apply the relation to all objects not in the low-reddening sample for which a $t_2$ is measured.}
+{From our results we conclude that an empirical relation between  $L_{max}$ and $t_2$ can allow us to infer the  $M_{^{56}Ni}$ for highly reddened objects without an estimate of their total absorption. The results for SN2014J from this method correspond well with the values obtained from recent $\gamma$ ray observations, thus providing further evidence of the potency of this technique}
+
+
+
+%%-----------------
+\keywords{stars: supernovae: general } %
+\maketitle
+\section{Introduction}
+\label{sec-intro}
+
+Type Ia supernovae (SNe\,Ia) have been used as cosmological distance indicators and have provided first evidence for the accelerated expansion of the universe \citep{Riess1998,Perlmutter1999}. . Their potency as cosmological probes has led to dedicated efforts to understand the nature of these explosions, in order to reduce effects from systematics in constraining  the cosmological parameters. 
+
+SNIa, in the optical, require corrections using correlations between observables \citep{Phillips1993, Tripp1998} to improve cosmological parameter estimation. Recent studies of SNIa  have indicated that the SNIa are much more uniform in  
+the NIR, which has led to systematic efforts in obtaining NIR light curves of Ia's. Another interesting feature of SNIa in the NIR is a second maximum that appears $\sim$ 15-35 days after maximum light in $B$-band.  \cite{Kasen2006} demonstrated that the
+second maximum could be the result of increased emissivity in the NIR due to the emergence of FeII/CoII lines at late times due to the cooling of the ejecta.   
+This grid of models also showed that greater $M_{^{56}Ni}$ mass would lead to a later maximum
+in the NIR light curves.
+
+
+Investigations have shown a strong dependence of the timing of the second maximum (hereafter $t_2$)
+on the decline rate of the SNIa ($\Delta m_{15}$), indicating that brighter explosions have a later onset of the second maximum. The models of \cite{Kasen2007} point towards a strong relation between $M_{^{56}Ni}$ and the reddening of the colour curve of an SNIa. A faster reddening of the optical colour curve would imply an earlier onset of the late- time uniform colour evolution (known, commonly, as the 'Lira Law'). A strong relation is observed between $t_2$ and the epoch of onset of the Lira law ($t_L$). The conclusions from these studies point to a strong connection between 
+the $M_{^{56}Ni}$ in SNIa and $t_2$. 
+
+In this study, we investigate ,directly, the link between the  $M_{^{56}Ni}$ and $t_2$. We use a sample of nearby objects to measure the bolometric luminosity and use different methods to derive $M_{^{56}Ni}$ from the bolometric peak. In order to circumvent the uncertainties from the presumed reddening law, we use only objects with very low reddening from dust. We aim to use this relation to derive $M_{^{56}Ni}$ for heavily extinguished SNae where using the bolometric peak is extremely sensitive to the 
+total absorption value used, and hence, the reddening law. To this end, we propose using NIR only data at late times along with an empirical relation to obtain precise 
+estimates of $M_{^{56}Ni}$ for objects where other methods provide disparate results. 
+
+The structure of this paper is as follows. In section \ref{sec:data}, we describe the sample of objects used in the study. In section \ref{sec-ana} we describe the analysis procedure for obtaining the bolometric peak luminosity. In section \ref{sec-res}, we summarize the results of our investigation. Finally, we provide a discussion and conclusion in section \ref{sec-dnc}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.50\textwidth, height=0.6\textheight]{../plot_rel/lbolt2_bf.pdf}
+\caption{$L_{max}$ is plotted against the $t_2$ in $YJH$ bands. A strong correlation is observed in the $Y$ and $J$, whereas a weaker correlation is seen in the $H$ band. Best fit lines are overplotted in black.}
+\label{fig:nit2}
+\end{figure}
+
+
+
+\section{Data} 
+\label{sec:data}
+%
+
+
+The sample for this study is constrained by objects which have NIR observations at late times as well as well-sampled optical and NIR light curves to
+construct a (pseudo-) bolometric light curve. The main data source of
+near-infrared photometry of SNe\,Ia currently comes from the Carnegie
+Supernova Project \citep[CSP;][]{Contreras2010,Burns2011,Stritzinger2011,Phillips2012,Burns2014}.
+They form an ideal basis for an evaluation of light curves parameters.
+We add to this sample objects from the literature and the nearby objects eg. SN2011fe.
+
+
+Since we aim to circumvent the uncertainties from host galaxy extinction, we only select objects with an $E(B-V)_{host}$ value
+less than 0.1. The values for $E(B-V)_{host}$ are obtained from the literature, references for each object are given in \ref{tab:lr}. Since we want to investigate the connection of $M_{Ni}$ with $t_2$ in the NIR, this excludes objects which are spectroscopically similar  
+to the
+peculiar SN~1991bg \citep{Filippenko1992, Leibundgut1993, Mazzali1997} and
+objects that do not exhibit a second maximum
+(SNe~2005bl, 2005ke, 2005ku, 2006bd, 2006mr, 2007N, 2007ax, SN2007ba,
+2009F). On similar lines we exclude peculiar objects like 2006bt and 2006ot. 
+ For consistency, we also only include objects with coverage near maximum in $u$ to $H$ bands, and hence we do not need to apply corrections for missing passbands. 
+These constraints leave us with a final sample of 18 objects. 
+
+
+ 
+
+\section{Analysis}
+\label{sec-ana}
+\input{ana.tex}
+
+\section{Results}
+\label{sec-res}
+\input{res.tex}
+
+\section{Discussion and Conclusion}
+\label{sec-dnc}
+\input{dis.tex}
+
+
+
+
+
+\begin{acknowledgements}
+This research was supported by the DFG cluster of excellence ʻOrigin and
+Structure of the Universe' 
+%We would like to thank Chris Burns for his
+%help with template fitting using SNooPy, Richard Scalzo for discussion
+%on the nickel masses and Saraubh Jha on the nature of Type Ia
+%supernovae. We thank Stephane Blondin for his comments on the manuscript.
+B.L. acknowledges support for this work by the Deutsche
+Forschungsgemeinschaft through TRR33, The Dark Universe and the Mount
+Stromlo Observatory for a Distinguished Visitorship during which most of
+this publication was prepared.
+
+\end{acknowledgements}
+
+\input{ref.tex}
+
+%\appendix
+%\input{appendix}
+
+\end{document}
+ 

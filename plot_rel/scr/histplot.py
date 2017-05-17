@@ -1,3 +1,16 @@
+"""
+Script to complement the code 'pplot.py' for fgirue 1 of the ni masses paper
+This contain 4 functions, one for each of figures 2-5
+1. difference of the methods.
+2. The histogram of the nickel masses
+3. scatter of the different lmaxes 
+4. histogram of the derived lmaxes
+
+Inside the main function write the functions you want run and run the script
+
+"""
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 import statsmodels.api as sm
@@ -16,7 +29,9 @@ inp=np.loadtxt("vals.txt")
 first function deals with plotting the histogram for the different methods
 """
 def plot_hist():
-	
+	"""
+	Figure 3 (because why be chronological)
+	"""
 	plt.rcParams['axes.linewidth']=2.5
 	
 	plt.rcParams['xtick.major.pad']=8
@@ -25,19 +40,22 @@ def plot_hist():
 	
 	#inp[:,3]=ni3; inp[:,1].astype('float32'); inp[:,2].astype('float32')
 	#for the 3 filters, it plots the arrays with mpl libs
+	
 	fig=plt.figure(figsize=(15, 18))		
 	fil=['y', 'j', 'h']
 	s=[311,312,310]
 	f=['y', 'g', 'r']
 	lablist=["var", "fixed", "DDC"]
 	for k in range(3):
+		#make minor ticks as well 
 		print k
 		sp=plt.subplot(s[k])
 		sp.minorticks_on()
            	sp.tick_params('both', length=15, width=2)
            	sp.tick_params('both', length=7, width=2, which='minor')
+	
 		plt.xlim(0.2, 0.8)
-		plt.ylim(0.0, 8.0)
+		plt.ylim(0.0, 10.0)
 	   	frame=plt.gca()
 	   	sp.yaxis.set_major_locator(MultipleLocator(3))
 	   	ytickar=frame.axes.get_yticklabels()
@@ -64,7 +82,14 @@ def plot_hist():
 	plt.subplot(312)
 	plt.ylabel('$N_{SN}$', fontsize=45, labelpad=10)
 	plt.savefig('hist_ni.pdf')	
+	
+	
 def plot_line():
+	"""
+	Line plot to compare the different methods (delta versus the Mni from arnett's rule)
+	
+	Pulls from vals.txt (which has been updated to the latest version)
+	"""
 	er=np.loadtxt('vals_tab.tex', usecols=(1, 2), delimiter='&')[:,1]
 	plt.rcParams['axes.linewidth']=2.5
 	
@@ -104,8 +129,11 @@ def plot_line():
 	   	else:
 	   		for xlab in frame.axes.get_xticklabels():
 	   			xlab.set_fontproperties(fp) 
+		print "The input values are:", inp
 	   	dif=inp[:,arr[k]]-inp[:,1]
-	   	
+	
+		print "The difference values are:", dif
+		#prints the correlation coefficient between the difference and the Mni   	
 	   	print pearsonr(dif, inp[:,1])
 	   	
 	   	res=sm.OLS(dif, inp[:,1]).fit()
@@ -121,6 +149,11 @@ def plot_line():
 	plt.savefig('dif_ni_comp.pdf')
 
 def lmax_scat():
+	"""
+	Make lmax(Y)-(J) versus either one;
+	
+	no trend seen
+	"""
 	plt.rcParams['axes.linewidth']=2.5
 	
 	plt.rcParams['xtick.major.pad']=9
@@ -131,13 +164,14 @@ def lmax_scat():
 	f=['yD', 'rs']
 	lablist=["Arnett-var", "DDC"]
 	arr=[0, 2]
-	iny_files=np.loadtxt('../../out_files/new_lbolhist_y.txt', dtype='string')
-	inj_file=np.loadtxt('../../out_files/new_lbolhist_j.txt', dtype='string')
+	iny_files=np.loadtxt('../../out_files/lbolhist_y.txt', dtype='string')
+	inj_file=np.loadtxt('../../out_files/lbolhist_j.txt', dtype='string')
 	
-	print inj_file
+	#print inj_file
 	
 	dif=[float(inj_file[inj_file[:,0]==i[0]][0][1])-float(i[1]) for i in iny_files if i[0] in inj_file[:,0]]	
-	lmaxj=[float(inj_file[inj_file[:,0]==i[0]][0][1]) for i in iny_files if i[0] in inj_file[:,0]]	
+	lmaxj=[float(inj_file[inj_file[:,0]==i[0]][0]
+[1]) for i in iny_files if i[0] in inj_file[:,0]]	
 	elm=[float(inj_file[inj_file[:,0]==i[0]][0][2]) for i in iny_files if i[0] in inj_file[:,0]]
 	edif=[float(inj_file[inj_file[:,0]==i[0]][0][2])+float(i[2]) for i in iny_files if i[0] in inj_file[:,0]]
 	
@@ -146,7 +180,10 @@ def lmax_scat():
       	sp.tick_params('both', length=15, width=2)
        	sp.tick_params('both', length=7, width=2, which='minor')
 	plt.xlim(0.6, 1.6)
-   	plt.errorbar(lmaxj, dif, xerr=elm, yerr=edif, fmt='rs', ms=15, linewidth=2.5)
+   	plt.errorbar(lmaxj, dif, xerr=elm, yerr=edif, fmt='rs', ms=15, linewidth=2.5
+)
+
+	print pearsonr(dif, lmaxj)
    	frame=plt.gca()
    	ytickar=frame.axes.get_yticklabels()
    	xtickar=frame.axes.get_xticklabels()
@@ -163,7 +200,12 @@ def lmax_scat():
    	plt.xlabel('$L_{max}(J)$',  fontsize=35, labelpad=5)
 	plt.savefig('lmax_scat.pdf')
 
+
 def  lmax_est_hist():
+	"""
+	Lmax distributions from the t2
+	
+	"""
 	filt=['y', 'j']
 	c=['y', 'g']
 	s=[211, 210]
@@ -173,7 +215,7 @@ def  lmax_est_hist():
 	plt.rcParams['xtick.major.pad']=9
 	plt.rcParams['ytick.major.pad']=6
 	for k in range(2):
-		infile=np.loadtxt('../../out_files/new_lbolhist_'+filt[k]+'.txt', usecols=(2, 1))
+		infile=np.loadtxt('../../out_files/lbolhist_'+filt[k]+'.txt', usecols=(2, 1))
 		sp=plt.subplot(s[k])
 		sp.minorticks_on()
            	sp.tick_params('both', length=15, width=2)
@@ -183,6 +225,8 @@ def  lmax_est_hist():
 	   	frame=plt.gca()
 	   	sp.yaxis.set_major_locator(MultipleLocator(3))
 	   	ytickar=frame.axes.get_yticklabels()
+	   	
+	   	print max(infile[:,1])
 	   	
 	   	for ylab in ytickar:
 	 
@@ -196,7 +240,7 @@ def  lmax_est_hist():
 	   	else:
 	   		for xlab in frame.axes.get_xticklabels():
 	   			xlab.set_fontproperties(fp) 
-		plt.hist(infile[:,1], color=c[k], bins=np.arange(0.6, 1.6, 0.1))
+		plt.hist(infile[:,1], color=c[k], bins=np.arange(0.6, 1.7, 0.1))
 		plt.annotate(upper(filt[k]),xy=(0.1, 0.8), xycoords="axes fraction", fontsize=35, weight='bold')
 		plt.ylabel('$N_{SN}$', fontsize=35)
 	plt.xlabel('$L_{max}$', fontsize=35)
@@ -205,7 +249,7 @@ def  lmax_est_hist():
 			
 def main():
 	#plot_line()
-	#plot_hist()
+	plot_hist()
 	#lmax_scat()
-	lmax_est_hist()
+	#lmax_est_hist()
 main()

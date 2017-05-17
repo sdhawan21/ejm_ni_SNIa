@@ -1,0 +1,15 @@
+\begin{table}
+\caption{Values of the coefficients for correlations between $L_{max}$ and $t_2$ in the individual filters}
+\begin{center}
+\begin{tabular}{llcc}
+\hline
+Filter & $a_i $ & $b_i $	 \\
+\hline
+Y    &	0.043($\pm$0.005)  &	-0.119($\pm$0.131)	\\
+J    & 	0.040($\pm$0.004)  &	-0.057($\pm$0.116)		\\
+H    & 	0.036($\pm$0.009)  &	 0.256($\pm$0.222)		\\
+\hline
+\end{tabular}
+\end{center}
+\label{tab:coeff}
+\end{table}

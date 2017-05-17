@@ -1,0 +1,8 @@
+Relations used in Scalzo et al. 2014c
+
+Mni = pow(10, -0.4*(19.841 + Mb))
+
+Mej = 
+
+
+

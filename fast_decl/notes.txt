@@ -1,0 +1,27 @@
+Nickel mass values for 91bg like/ 86G like objects are in the ni_dm15.txt file
+
+05bl value from Taubenberger et al. (they treat the missing passbands)
+
+07mm doesnt have infrared or u band (extrapolated using the DDC models)
+
+Strong correlation suggesting more Nickel implies later colour evolution, even within the 91bg-likes and the complete fast declining sample 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

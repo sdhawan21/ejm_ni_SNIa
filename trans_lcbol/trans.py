@@ -1,0 +1,88 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+from mag2fl import conv
+
+fname=sys.argv[1]
+
+pbin=np.loadtxt('/home/sdhawan/idl/lcbol/pbinfo.dat', dtype='string')
+
+def input_file(fname):
+	fout=open(fname, 'r')
+	ls=[]
+	for row in fout:
+		ls.append(row.split())
+	red_dict={}
+	
+	red_dict['avh']=ls[2][1];red_dict['e_avh']=ls[2][3] 
+	red_dict['avmv']=ls[4][1]; red_dict['e_avmv']=ls[4][3]
+	
+	return red_dict, ls[1][1] 
+	
+
+
+def read_lc_pb_info(sn):
+	
+
+	filters=conv().f_ord(sn)
+	lcdata={}
+	for k in filters:
+		lcdata[k]=conv().rd_lc(sn, k)
+	return lcdata
+	
+def finf():
+	finf_dict={}
+	sn=input_file(fname)[1]
+	filts=conv().f_ord(sn)
+	for k in filts:
+		cond=(pbin[:,0] == k+"_CSP")
+		finf_dict[k+"eff"]=float(pbin[cond][0][1])
+		finf_dict[k+"ew"]=float(pbin[cond][0][2])
+		finf_dict[k+"zp"]=float(pbin[cond][0][3])
+	return finf_dict
+
+	
+#def reden_corr():
+def interp_filt(fmax, sn):
+	lcdata=read_lc_pb_info(sn)
+	
+	taxis=lcdata[fmax]["MJD"]
+	print len(taxis)	
+	lcref={}
+	for k in filts:
+		lcsl=lcdata[k]
+		lcsub={}
+		tax=lcsl['MJD']
+		mjd=[]; mag=[]; magerr=[]
+		for tt in range(len(tax)):
+			
+			#if min(abs(taxis-tax[tt])) <= 1.0:
+			if tax[tt] in taxis:
+				mjd.append(tax[tt])
+				mag.append(lcsl[k][tt])
+				magerr.append(lcsl[k][tt])
+		print len(mag)	
+		lcsub[k]=mag; lcsub['e_'+k]=magerr; lcsub['MJD']=mjd
+
+		lcref[k]=lcsub
+			
+	return lcref
+	
+		
+if len(sys.argv)==2:
+	
+	sn=input_file(fname)[1]
+	lcdata=read_lc_pb_info(sn)
+	filts=conv().f_ord(sn)
+	
+	arr=np.array([len(lcdata[k]["MJD"]) for k in filts])
+	filt_max=filts[arr==arr.min()][0]
+	
+	lcref=interp_filt(filt_max, sn)	
+	print filts, len(lcref['u']['MJD'])
+	
+
+else:
+	print "Usage:"+sys.argv[0]+"filename"
+	

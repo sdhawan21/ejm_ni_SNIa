@@ -84,6 +84,8 @@ def lbol_red(tval):
 	lb2*=dist_fac(fac)
 	
 	lb3, elb3, jt3, jet3=arr_crt(ufl2, tj)
+	
+	
 	#array for the y2j conversion (if specified by command line)
 	if int(sys.argv[4])==1:
 		lb1, elb1, iyt2, iyet2=arr_crt(ufl1, y2j)

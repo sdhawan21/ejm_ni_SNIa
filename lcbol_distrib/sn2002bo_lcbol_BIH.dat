@@ -1,0 +1,13 @@
+#generated on Fri Jul 25 18:41:10 2014 using mklcbol.pro
+#
+#INFILE   SN2004dtopt+nir_photo.dat
+#NAME     sn2002bo
+#AV_HOST  0.850 +/- 0.113
+#RV_HOST  2.190 +/- 0.290
+#AV_MW    0.077 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 31.900 +/- 0.200
+#NFILT    3 (B_Bessell,I_Bessell,H_2MASS)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 52400.039         Infinity             -NaN

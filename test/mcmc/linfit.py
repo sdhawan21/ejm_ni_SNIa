@@ -97,7 +97,8 @@ def main():
 	psize = pos_max - pos_min
 	pos = [pos_min + psize*np.random.rand(ndim) for i in range(nwalkers)]
 
-	sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x, xerr, y, yerr))
+	fac=float(sys.argv[4])
+	sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x, xerr, y, yerr/fac))
 
 	#burnin phase
 	pos, prob, state  = sampler.run_mcmc(pos, 300)
@@ -160,6 +161,7 @@ def main():
 	plt.figure(2)
 
 	plt.hist(vals)
+	
 	#print "Acceptance fraction \t:", sampler.acceptance_fraction, sampler.acceptance_fraction.shape
 	#plt.show()
 
@@ -172,8 +174,8 @@ def main():
 	plt.errorbar(x, y, yerr=yerr, fmt=".k")
 	plt.show()
 	"""
-if len(sys.argv)==4:
+if len(sys.argv)==5:
 	main()
 else:
-	print "Usage: python" +sys.argv[0]+ "<file with parameters> <SN>  <filtering the sample?>"
+	print "Usage: python" +sys.argv[0]+ "<file with parameters> <SN>  <filtering the sample?> <factor to reduce errors by> <band>"
 

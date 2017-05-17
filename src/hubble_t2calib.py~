@@ -1,0 +1,44 @@
+"""
+evaluating hubble constant using 
+
+
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+from pack import bol
+
+dis=np.loadtxt('csp_dist.txt', dtype='string')
+rn=np.random.normal
+def fbolcalc(infile, name):
+	dist=float(dis[dis[:,0]==name][0][1])
+	lmax=bol.bol_func().bolpeak(infile)[0]
+	d2mpc=pow(10, (dist-25.0)/5.0)
+	fd=4*np.pi*(d2mpc*3.08e24)**2
+	fbolmax=lmax/fd
+	return fbolmax
+
+def main():
+	infile=sys.argv[1]
+	name=sys.argv[2]
+	fb=fbolcalc(infile, name)
+	t2=float(sys.argv[3])
+	
+	#slope and intercept values from the 'calibration' using the objects z < 0.01
+	
+	ar=[rn(0.019, 0.00756)*t2+rn(-0.0287, 0.211) for i in range(10000)]
+	#input redshift from the command line 
+	z=float(sys.argv[4])
+	
+	mni=np.mean(ar); stdmni=np.std(ar)
+	
+	r=np.sqrt(4*np.pi*fb/(2*mni*1e43)) 
+	
+	#H0 expression as in Stritzinger paper
+	
+	h0=3.08e24*3e5*z*r
+	
+	
+	print np.mean(h0), np.std(h0)
+main()

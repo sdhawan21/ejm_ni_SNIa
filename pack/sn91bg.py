@@ -9,6 +9,8 @@ class for bollc
 """
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
 
 from glob import glob
 from itertools import *
@@ -84,3 +86,30 @@ class bollc:
 	def get_bol_name(self, lc):
 		head=self.get_bol_head(lc)
 		return head[3][1]
+"""
+class cfaspec:
+	
+	pt='/home/sdhawan/neb_spec/cfaspec_snIa/'
+	indir=glob(pt+'sn*')
+	
+	mjd=np.loadtxt(pt+'cfasnIa_mjdspec.dat', dtype='string')
+	bmax=np.loadtxt(pt+'cfasnIa_param.dat', dtype='string')
+	def getcfaspec(self, sn, num):
+		
+		os.chdir(self.pt+sn)
+		dirsn=glob('*.flm')
+		spec=dirsn[num]
+		mjdspec=self.mjd[self.mjd[:,0]== spec][0][1]
+		mjdspec=float(mjdspec)
+
+		wv, fl, flerr=np.loadtxt(spec, unpack=True)
+		tbmax=self.bmax[self.bmax[:,0] == sn[2:]][0][2]
+		tbmax=float(tbmax)
+		print mjdspec-tbmax
+		plt.plot(wv, fl)
+		plt.show()
+		
+		return mjdspec-tbmax
+"""		
+		
+	

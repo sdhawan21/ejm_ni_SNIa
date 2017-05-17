@@ -13,11 +13,11 @@ The following is a brief summary of the steps in the analysis to estimate $H_0$
 
 \item For $M_{max}$ I use the model values provided (without the faintest model since we know that 91bg-likes are fainter even in the NIR). 
 
-\item Using the mean and error on the zero point and the mean and standard error on the mean on $M_{max}$ from the models, I create 10000 realisation of $H_0$ 
+\item Using the mean and error on the zero point and the mean and standard error on the mean on $M_{max}$ from the models, I create 10000 realisation of $H_0$ (similar to Cartier+2014)
 
 \item The final estimate is the mean and standard deviation of the resulting $H_0$ values
 
-\item
+\item For the systematic uncertainty, I propagate a 0.03 mag uncertainty in the zero point measurement. 
 
 \end{itemize}
 

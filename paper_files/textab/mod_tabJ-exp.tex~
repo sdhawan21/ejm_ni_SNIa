@@ -1,0 +1,85 @@
+\begin{table*}
+%\begin{longtable}{@{\extracolsep{\fill}}l r c r c r  r r r l@{}}
+%\tiny
+\centering
+%\begin{minipage}{140mm}
+\caption{$J$ filter apparent magnitude and phase of the two maxima and the minimum for the complete sample. The phases are given in days relative to the $B$ maximum. \label{tab:magJ}}
+\begin{tabular}{l r r r r r r}
+\hline
+SN  & \multicolumn{1}{c}{$t_1$}  & \multicolumn{1}{c}{$m_1$} & \multicolumn{1}{c}{$t_0$}  & \multicolumn{1}{c}{$m_0$} & \multicolumn{1}{c}{$t_2$}  & \multicolumn{1}{c}{$m_2$} \\
+    & \multicolumn{1}{c}{(days)} &                           & \multicolumn{1}{c}{(days)} &                           & \multicolumn{1}{c}{(days)} &                           \\
+%\hline
+%\\
+%\\
+%\hline
+%&&& J-band &&&& \\
+\hline
+1980N  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $21.86 \pm 2.70$           & \multicolumn{1}{c}{\ldots} \\
+1981B  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $32.19 \pm 0.10$           & \multicolumn{1}{c}{\ldots} \\
+1986G  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $16.40 \pm 1.40$           & \multicolumn{1}{c}{\ldots} \\
+1998bu & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $29.84 \pm 0.40$           & \multicolumn{1}{c}{\ldots} \\
+1999ac & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $27.00 \pm 2.00$           & $15.61 \pm 0.50$           \\
+1999ee & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $11.19 \pm 0.74$           & $15.89 \pm 0.03$           & $34.40 \pm 0.70$           & $15.89 \pm 0.03$           \\
+2000E  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $31.85 \pm 0.70$           & $14.46 \pm 0.10$           \\
+2000bh & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $33.30 \pm 0.60$           & $17.33 \pm 0.03$           \\
+2001ba & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $13.75 \pm 0.95$           & $19.15 \pm 0.12$           & $34.01 \pm 0.90$           & $18.01 \pm 0.03$           \\
+2001bt & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $12.90 \pm 1.60$           & $17.21 \pm 0.06$           & $28.32 \pm 0.50$           & $16.43 \pm 0.03$           \\
+2001cn & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.31 \pm 0.29$           & $17.37 \pm 0.06$           & $30.11 \pm 0.50$           & $16.56 \pm 0.03$           \\
+2001cz & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $18.95 \pm 1.38$           & $17.53 \pm 0.11$           & $34.00 \pm 0.50$           & $16.69 \pm 0.10$           \\
+2001el & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $18.35 \pm 0.19$           & $14.47 \pm 0.04$           & $31.20 \pm 0.70$           & $13.92 \pm 0.03$           \\
+2002bo & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $15.01 \pm 0.53$           & $15.49 \pm 0.06$           & $28.90 \pm 0.68$           & $14.76 \pm 0.04$           \\
+2002dj & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $31.14 \pm 1.83$           & $15.50 \pm 0.07$           \\
+2002fk & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.30 \pm 0.31$           & \multicolumn{1}{c}{\ldots} & $29.54 \pm 0.23$           & $15.11 \pm 0.06$           \\
+2003cg & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $13.71 \pm 1.80$           & $15.26 \pm 0.13$           & $30.17 \pm 1.50$           & $14.46 \pm 0.03$           \\
+2003hv & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $11.47 \pm 0.16$           & \multicolumn{1}{c}{\ldots} & $22.24 \pm 0.11$           & \multicolumn{1}{c}{\ldots} \\
+2004eo & $-2.40 \pm 1.10$           & $15.55 \pm 0.06$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2004ey & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $16.06 \pm 0.09$           & $17.39 \pm 0.03$           & $29.42 \pm 0.14$           & $16.47 \pm 0.02$           \\
+2004gs & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $12.64 \pm 0.58$           & $18.41 \pm 0.04$           & $22.29 \pm 0.36$           & $18.10 \pm 0.04$           \\
+2004gu & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $35.94 \pm 1.44$           & $18.44 \pm 0.09$           \\
+2005A  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $11.88 \pm 0.17$           & $17.85 \pm 0.03$           & $27.58 \pm 0.31$           & $16.96 \pm 0.03$           \\
+2005M  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $15.74 \pm 3.78$           & $18.58 \pm 0.23$           & $30.93 \pm 0.70$           & $17.49 \pm 0.05$           \\
+2005ag & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $13.02 \pm 1.67$ 		  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2005al & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.18 \pm 1.17$           & \multicolumn{1}{c}{\ldots} & $25.34 \pm 1.11$           & $16.55 \pm 0.05$           \\
+2005am & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $17.21 \pm 1.30$           & \multicolumn{1}{c}{\ldots} & $21.34 \pm 0.70$           & $14.96 \pm 0.01$           \\
+2005el & $-4.72 \pm 0.25$           & $15.48 \pm 0.01$           & $ 9.75 \pm 2.05$           & $17.44 \pm 0.10$           & $24.64 \pm 0.64$           & $16.63 \pm 0.02$           \\
+2005eq & $-4.85 \pm 0.61$           & $16.76 \pm 0.05$           & $23.80 \pm 5.04$           & $18.49 \pm 0.12$           & $35.00 \pm 0.70$           & $17.79 \pm 0.06$           \\
+2005hc & $-2.22 \pm 0.63$           & $17.85 \pm 0.04$           & $15.76 \pm 5.23$           & $19.34 \pm 0.21$           & $36.47 \pm 2.54$           & $18.51 \pm 0.11$           \\
+2005iq & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $24.19 \pm 0.70$           & $18.66 \pm 0.04$           \\
+2005kc & $-3.97 \pm 0.22$           & $15.44 \pm 0.01$           & $15.29 \pm 2.55$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2005ki & $-3.80 \pm 0.74$           & $16.08 \pm 0.02$           & $18.11 \pm 5.74$           & $18.28 \pm 0.48$           & $25.17 \pm 1.66$           & $17.32 \pm 0.04$           \\
+2005na & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $32.69 \pm 0.48$           & $17.45 \pm 0.04$           \\
+2006D  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $25.36 \pm 0.65$           & $15.83 \pm 0.02$           \\
+2006X  & $-3.49 \pm 0.37$           & $12.75 \pm 0.19$           & $12.58 \pm 0.26$           & $14.59 \pm 0.02$           & $28.19 \pm 0.49$           & $13.76 \pm 0.01$           \\
+2006ax & $-3.99 \pm 0.25$           & $15.68 \pm 0.02$           & $14.83 \pm 0.84$           & $17.50 \pm 0.02$           & $32.00 \pm 0.63$           & $16.89 \pm 0.01$           \\
+2006bh & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $13.58 \pm 0.77$           & $16.60 \pm 0.03$           & $22.89 \pm 0.31$           & $16.09 \pm 0.04$           \\
+2006et & $-3.76 \pm 0.31$           & $16.01 \pm 0.02$           & $18.73 \pm 0.36$           & $17.68 \pm 0.01$           & $32.42 \pm 1.47$           & $16.92 \pm 0.04$           \\
+2006gt & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $20.20 \pm 1.20$           & $18.01 \pm 0.19$           \\
+2006hb & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $20.36 \pm 2.00$           & $18.73 \pm 0.19$           \\
+2006hx & $-2.80 \pm 0.44$           & $17.34 \pm 0.17$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2006is & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $20.18 \pm 0.13$           & $18.90 \pm 0.08$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2006kf & $-3.61 \pm 0.32$           & $16.35 \pm 0.02$           & $12.76 \pm 0.84$           & $18.08 \pm 0.11$           & $24.20 \pm 0.82$           & $17.48 \pm 0.03$           \\
+2006ob & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $12.51 \pm 2.90$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2007A  & $-3.80 \pm 0.36$           & $15.64 \pm 0.02$           & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} \\
+2007S  & $-4.66 \pm 0.23$           & $15.33 \pm 0.01$           & $16.59 \pm 2.42$           & $17.02 \pm 0.02$           & $35.53 \pm 0.23$           & $16.41 \pm 0.08$           \\
+2007af & $-3.92 \pm 0.34$           & $13.46 \pm 0.01$           & $15.33 \pm 0.12$           & $14.09 \pm 0.02$           & $29.53 \pm 0.16$           & $14.60 \pm 0.01$           \\
+2007as & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $24.52 \pm 3.51$           & $16.99 \pm 0.04$           \\
+2007bc & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $17.35 \pm 0.04$           \\
+2007bd & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $10.90 \pm 1.60$           & $18.03 \pm 0.06$           & \multicolumn{1}{c}{\ldots} & $18.48 \pm 0.27$           \\
+2007bm & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.73 \pm 0.08$           & $15.59 \pm 0.01$           & $27.77 \pm 0.21$           & $14.88 \pm 0.01$           \\
+2007le & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.98 \pm 0.45$           & $15.55 \pm 0.02$           & $30.77 \pm 0.44$           & $14.78 \pm 0.04$           \\
+2007nq & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $11.97 \pm 3.50$           & $19.46 \pm 0.45$           & $23.69 \pm 1.51$           & $18.37 \pm 0.03$           \\
+2007on & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $18.18 \pm 0.13$           & $14.03 \pm 0.01$           \\
+2008C  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $15.72 \pm 2.61$           & $17.52 \pm 0.10$           & $32.42 \pm 1.90$           & $16.80 \pm 0.09$           \\
+2008R  & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $14.10 \pm 0.74$           & $16.43 \pm 0.02$           \\
+2008bc & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $33.33 \pm 0.23$           & $16.75 \pm 0.02$           \\
+2008fp & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $31.03 \pm 0.20$           & $14.49 \pm 0.02$           \\
+2008gp & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $35.71 \pm 0.81$           & $18.12 \pm 0.11$           \\
+2008hv & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $24.68 \pm 0.29$           & $16.49 \pm 0.03$           \\
+2008ia & \multicolumn{1}{c}{\ldots} & \multicolumn{1}{c}{\ldots} & $10.86 \pm 2.10$           & $18.13 \pm 0.07$           & $25.58 \pm 0.16$           & $17.60 \pm 0.08$           \\
+2011fe & $-3.70 \pm 1.40$           & $10.40 \pm 0.11$           & $14.32 \pm 0.34$           & $12.40 \pm 0.01$           & $29.99 \pm 0.71$           & $11.69 \pm 0.01$           \\
+2014J  & $-3.78 \pm 0.88$           & $ 9.35 \pm 0.04$           & $16.58 \pm 0.76$           & $11.25 \pm 0.03$           & $28.37 \pm 5.71$           & $10.43 \pm 0.40$           \\
+\hline
+\end{tabular}
+%\end{minipage}
+%\end{longtable}
+\end{table*}

@@ -1,0 +1,16 @@
+"""
+Plot the light curve in a given filter for a given SN
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+from mag2fl import conv
+
+
+def main():
+	sn=sys.argv[1]; band=sys.argv[2]
+	rlc=conv().rd_lc(sn, band)
+	plt.plot(rlc['MJD'], rlc[band], 'ro')
+	plt.show()
+main()

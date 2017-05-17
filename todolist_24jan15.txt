@@ -1,0 +1,25 @@
+1. Planck maps
+	a. download the lfi data
+	b. use healpy, get noise map from ringhalf
+	c. compare to smica
+
+2. Ni mass paper
+	a. recheck all values in fits. 
+	b. save spline fit plots (bolometric)
+	c. text in discussion; more physics of progenitor
+
+3. T2 project with Roberto
+
+4. Recheck science case of HCT proposal
+
+5. Fast turnaround 
+
+6. IFU spectroscopy
+	a. survey multiple galaxies 
+	b. look at integrating h\alpha line in NGC 1316
+	(make notes too)
+	c. read from ground up about IFU spectroscopy
+
+
+
+

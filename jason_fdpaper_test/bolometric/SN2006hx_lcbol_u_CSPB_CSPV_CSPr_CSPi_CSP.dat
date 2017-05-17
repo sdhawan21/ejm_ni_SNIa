@@ -1,0 +1,16 @@
+#generated on Tue Apr 19 12:49:09 2016 using mklcbol.pro
+#
+#INFILE   SN2006hx_bol.dat
+#NAME     SN2006hx
+#AV_HOST  0.357 +/- 0.078
+#RV_HOST  1.700 +/- 0.290
+#AV_MW    0.081 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 36.470 +/- 0.100
+#NFILT    5 (u_CSP,B_CSP,V_CSP,r_CSP,i_CSP)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 54013.145   5.64910460E+42   1.22241366E+42
+ 54028.215   7.99747597E+42   1.72304296E+42
+ 54036.184   4.52549840E+42   9.68774174E+41
+ 54040.148   3.16115562E+42   6.71214908E+41

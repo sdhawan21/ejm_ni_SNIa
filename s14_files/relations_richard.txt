@@ -1,0 +1,29 @@
+Run F of S14a, for Mej-x1 locus and the Mni-MB locus
+
+
+Mej/M⊙ = (1.322 ± 0.022) ± (0.185 ± 0.018)*x1 
+
+----------------------------------
+Use to see how much difference ~0.2 mag of reddening can do to estimated Nickel mass
+----------------------------------
+log MNi/M⊙ = −0.4*(MB + 19.841 ± 0.020)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+\documentclass[traditabstract]{aa}
+\usepackage{graphicx}
+\usepackage[intlimits,sumlimits]{amsmath}
+%\usepackage{deluxetable}
+\usepackage{times,epsfig} 
+\usepackage{natbib}
+\usepackage{amssymb}
+\bibpunct{(}{)}{;}{a}{}{,} % to follow the A&A style
+%for the bibliography at the end
+\bibliographystyle{aa} %style aa.bst
+\usepackage{amsmath}
+\usepackage[english]{babel}
+
+%-------------
+\newcommand{\beqa}{\begin{eqnarray}} 
+
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\Abst}[1]{\;#1}
+\newcommand{\bsub}{\begin{subequations}}
+\newcommand{\esub}{\end{subequations}}
+\newcommand{\beal}{\begin{align}}
+\newcommand{\ealn}{\end{align}}
+\newcommand{\lm}{$L_{max}$~}
+\newcommand{\Mni}{$\rm M_{^{56}Ni}$~}
+\newcommand{\Ms}{M$_{\sun}$}
+\newcommand{\mc}{$\rm M_{Ch}$~}
+\newcommand{\Nif}{$
+\rm ^{56}Ni$ } 
+\newcommand{\Cif}{$\rm ^{56}Co$ }
+\newcommand{\Fif}{$\rm ^{56}Fe$}
+\newcommand{\ksm}{${\rm km~s^{-1}~Mpc^{-1}}$}
+\newcommand{\s}{M$_{\sun}$~}
+\begin{document}
+%
+\title{Reddening-free \Nif estimates for Type Ia supernovae from near infrared data
+}
+
+
+\titlerunning{Nickel mass in SNe~Ia}
+\authorrunning{S. Dhawan et al.}
+\author{\textbf{Suhail Dhawan\inst{1,2,3}
+ 	\and B. Leibundgut\inst{1,2}
+    \and J. Spyromilio\inst{1}
+    \and S. Blondin\inst{4}}}
+
+
+\institute{European Southern Observatory, Karl-Schwarzschild-Strasse 2, D-85748 Garching bei M\"unchen, Germany \\
+\email{sdhawan@eso.org}
+\and  Excellence Cluster Universe, Technische Universit\"at M\"unchen,
+Boltzmannstrasse 2, D-85748, Garching, Germany\\
+\and Physik Department, Technische Universit\"at M\"unchen, James-Franck-Strasse 1, D-85748 Garching bei M\"unchen\\
+\and Aix Marseille Universit\'e, CNRS, LAM (Laboratoire d'Astrophysique de Marseille) UMR 7326, 13388 Marseille, France\\
+%\email{sdhawan@eso.org}
+} 
+
+\date{Received; accepted }
+
+\offprints{S. Dhawan}
+
+\abstract{The population of Type Ia supernovae (SNe\,Ia) exhibits a significant diversity. The reasons (e.g. parent population, explosion mechanism) for this diversity remain largely unknown.
+Using a sample of 18 SNe\,Ia with  low absorption by the host galaxy, we investigate the relation between the UVOIR peak luminosity  $L_{max}$ and the phase of the second maximum ($t_2$) and find a very tight correlation. 
+
+The $L_{max}$ vs. $t_2$ relation is applied to a sample of 40 additional SNe\,Ia with significant reddening ($E(B-V) >$ 0.1 mag) and a reddening-free bolometric luminosity function of SNe\,Ia is established. The $L_{max}$ is used to derive the \Nif masses for both the unreddened and reddened samples. The method is tested with the \Nif mass measurement from the direct observation of $\gamma-$rays in the heavily absorbed SN~2014J and found to be fully consistent. 
+
+Super-Chandrasekhar-mass explosions, in particular SN\,2007if, do not follow the relations between peak luminosity and second IR maximum. This may point to additional energy created during the maximum light period and hence violating Arnett's rule.
+{\bf JSP: I am not sure I understand this statement}
+
+The luminosity function of SNe\,Ia is constructed and is shown to be asymmetric with a tail of low-luminosity objects and a rather sharp high-luminosity cutoff although this may be due to selection effects. Using this method, the nickel mass function of SNe\,Ia shows a large dispersion of over a factor 2. This is a lower limit as our sample did not include low-luminosity SNe\,Ia, which do not show a second maximum.}%{junk}{junk}{junk}{junk}
+
+%\abstract{}{To determine the relation between the total amount of radioactive Nickel ($^{56}Ni$) produced in Type Ia supernovae (SNIa) and the timing of the second maximum ($t_2$) in the Near Infrared (NIR; $YJH$) bands and to  extrapolate Nickel mass values for reddened SNIa using this relation} 
+%{We measure the  (pseudo)-bolometric luminosity at peak from the ultraviolet optical Near Infrared (UVOIR) light curves  and use it to derive a value for the amount of $^{56}Ni$ produced ($M_{^{56}Ni}$) for a  sample of objects with very little reddening from the host galaxy.Therefore, the effects from presuming a reddening law are smaller.  }
+%{We find a strong correlation between the peak bolometric luminosity ($L_{max}$) and $t_2$ in the $Y$ and $J$ bands and a weaker trend in the $H$ band. We use this empirical relation to derive $L_{max}$ and therefore,  $M_{^{56}Ni}$ for test case SNae with high extinction. This allows us to have a $M_{^{56}Ni}$ value which is independent of the reddening law applied. We also apply the relation to all objects not in the low-reddening sample for which a $t_2$ is measured.}
+%{From our results we conclude that an empirical relation between  $L_{max}$ and $t_2$ can allow us to infer the  $M_{^{56}Ni}$.The estimates from this method for nearby highly reddened SNae are consistent with independent estimates in the literature. Using the $t_2$ parameter, we measure the $L_{max}$ for a large sample of SNe and conclude that they have a diverse range of bolometric peaks, and hence a range of $M_{^{56}Ni}$ indicating a significant variation in the explosion mechanism}
+
+
+
+
+%%-----------------
+\keywords{supernovae:general -- supernovae: individual:2014J, 2006X} %
+\maketitle
+\section{Introduction}
+\label{sec-intro}
+
+Type Ia supernovae (SNe\,Ia) exhibit diverse observable properties. In addition to the spectral and colour differences, the peak luminosity of SNe\,Ia  range over several factors \citep[e.g.][]{Suntzeff1996, Suntzeff2003, Li2011}. The amount of $^{56}$Ni, derived from the bolometric luminosity, \citep{Contardo2000} and the total ejecta mass \citep{Stritzinger2006a, Scalzo2014} also show a wide dispersion. The $M_{^{56}Ni}$ distribution provides insight into the possible progenitor channels and explosion mechanisms for SNe\,Ia \citep[see][]{Hillebrandt2000, Livio2000, Truran2012}.
+
+%\Mni can, in principle, be derived from the peak luminosity of multi-band ("pseudo-bolometric") light curves . 
+Following \citet{Arnett1982} at the epoch of maximum light the luminosity corresponds approximately to the the instantaneous energy input from the \Nif decay chain and therefore is a powerful tool for the determination of the mass of \Nif.  The method is limited, in part, by the accuracy of the correction for reddening in the Milky Way and the host galaxy. The total to selective absorption ($R_V$) appears systematically and significantly lower in the SN hosts than the canonical Milky Way $R_V$ value of 3.1. \citet{Nobili2008} used a large sample of nearby SNe\,Ia to derive an average $R_V$ which is significantly lower than 3.1. Taking into account spectroscopic features that correlate with luminosity \citet{Chotard2011} found a more 'normal' $R_V$ of $2.8 \pm 0.3$. However,  objects with high extinction are seen to have an unusually low $R_V$ \citep{Phillips2013, Patat2014}. To remove this uncertainty, we aim to establish a relation between the \Nif mass and observed properties of SN\,Ia in order to establish a \Nif mass distribution independent of reddening. %We present here a relation between the phase of the second maximum in the infrared light curves of SNe~Ia and the nickel mass, which is independent of reddening and allows us to establish the nickel mass distribution among SN~Ia explosions.
+
+%Near infrared (NIR) observations of SNe\,Ia provide a promising new approach, which was mostly advocated for improved distance measurements \citep{Meikle2000, Krisciunas2007, Wood-Vasey2008, Barone-Nugent2012}. The uniformity of the NIR peak luminosities together with the reduced effect of absorption yield distances with the uncertainties of light curve fitting and reddening corrections essentially removed. 
+%NIR light curves provide interesting clues on the physics of the explosions.  In particular the rebrightening of SNe\,Ia about 2 weeks after the first maximum holds interesting information on the \Nif produced in the explosions \citep{Dhawan2015}. 
+The Near Infrared (NIR) light curve morphology of SNe\,Ia differs from that in the optical. In particular, the light curves start to rebrighten about 2 weeks after the optical maximum, resulting in a second peak. 
+Recent studies \citep[e.g.][]{Biscardi2012,Dhawan2015}  found that more luminous SNe\,Ia reach the second maximum in NIR  filters at a later phase as predicted by \citet{Kasen2006} who also indicated that the phase of the second maximum should be a function of the \Nif mass in the explosion.  We, therefore, would expect that the phase of the second NIR maximum can be used to determine the amount of \Nif  synthesized in the explosion. 
+
+In the following, we investigate the link between the peak bolometric luminosity ($L_{max}$) and the phase of the second maximum in the NIR light curves ($t_2$). We use a sample of nearby low-absorption objects (described in Section~\ref{sec-data}) to determine the relation using different methods to derive $M_{^{56}Ni}$ (Section~\ref{sec-res}). We then apply this relation to derive $M_{^{56}Ni}$ for all SNe\,Ia in our sample with a measured $t_2$. In Section~\ref{sec-test} we check our derivation using two supernovae with independent measurements of $M_{^{56}Ni}$ (SN\,2014J  and SN\,2006X) . Using this reddening independent method we can establish the luminosity function of SNe\,Ia at maximum and also derive the distribution of nickel masses among SN\,Ia explosions (Section~\ref{sec-lfunc}). We discuss the implications of this determination of the $M_{^{56}Ni}$ distribution in the conclusions (Section~\ref{sec-dnc}).
+
+\begin{figure}
+\centering
+\includegraphics[width=.50\textwidth, height=0.6\textheight]{lbolt2_bf.pdf}
+\caption{The bolometric maximum luminosity $L_{max}$ is plotted against the phase of the second maximum $t_2$ in $YJH$ filter light curves. A strong correlation is observed in  $Y$ and $J$, whereas a weaker correlation is seen in the $H$ band.  Best fit lines are overplotted in black. The fit includes errors on both axes. Black points are the values from the DDC models \citep{Blondin2013}.}
+\label{fig:nit2}
+\end{figure}
+
+
+\section{Data} 
+\label{sec-data}
+
+From the photometry pblished by the Carnegie Supernova Project \citep[CSP;][]{ Contreras2010,Burns2011,Stritzinger2011,Phillips2012,Burns2014} we select SN\,Ia which have NIR observations at late times ($t>50$ days after B maximum) and with well-sampled optical and NIR light curves allowing us to determine an accurate $t_2$ and construct (pseudo-)bolometric light curves. We add to this sample objects from the literature that meet the same criteria. The full description of the selected SNe\,Ia can be found in \citet{Dhawan2015}.
+
+A sample of 18 low-reddening ( $E(B-V)_{host}<0.1$ mag) SNe\,Ia is presented in Table~\ref{tab:lr}. We use $E(B-V)_{host}$ values from the literature. These values are calculated from SN light curve fits. {\bf JSP: these two sentences together make no sense.} Since we only included supernovae, which display the second maximum in their NIR light curves this implies that most low-luminosity SNe\,Ia, especially SN\,1991bg-like objects were also excluded.
+
+The integrated flux emitted by an SN\,Ia in the UV, optical and NIR traces the comptonization of the $\gamma-$rays emitted through the \Nif $\rightarrow$  $^{56}$Co $\rightarrow$ $^{56}$Fe decay chain \citep[e.g.][]{Nadyozhin1994} {\bf JSP: this is a funny set of references for this science plus I think that what you are trying to say is what is in the next sentence and therefore I would skip the previous one}.
+At maximum light the UV-optical-IR integrated luminosity represents 94 $\%$ of the true bolometric luminosity \citep{Blondin2015}. 
+%As the SN emits most of its flux in the UV to NIR passbands, the "UVOIR bolometric flux" represents a physically meaningful quantity \citep{Suntzeff1996, Contardo2000}.
+
+We constructed $UBVRIJH$ bolometric light curves for objects with sufficient photometry near maximum light in the optical and the NIR. The $K$ band data was not included since only few SN\,Ia have well-sampled $K$ light curves. We calculated the fraction of the flux emitted in $K$ for a few well-observed SNe\,Ia with sufficient data and determined it to be around $1-3 \%$ of the UVOIR luminosity at maximum. Therefore, the exclusion of the $K$-flux results in only a minor uncertainty in the final UVOIR luminosity.  
+%{\bf during which phase? maximum?}
+The small reddening correction {\bf JSP: this is all very confused in the text. } following \citet{Cardelli1989} was applied to our data before integrating over the available passbands and the uncertainty propagated into the bolometric flux. We use a distance scale of $H_0=70$~$km$~$s^{-1}$~$Mpc^{-1}$ {\bf JSP: this is the same comment as in the other paper. Just reference the distance papers or NED} and the assumed distances are indicated in Table~\ref{tab:mni}. For the nearby SN\,Ia with distance measurements provided through direct methods (e.g. Cepheid stars, Tully-Fisher relation) we made sure to employ the same distance scale. 
+
+{\bf JSP proposed replacement text  from {\em The small ...} to {\em distance scale}} {\it Prior to the  derivation of a bolometric flux for the low extinction sample (see Table~\ref{tab:mni}) we apply a correction for the measured extinction following \citet{Cardelli1989}. The distances assumed for the sample and references can be found in Table~\ref{tab:mni}}  
+
+\input{tab/sn_samp_lr.tex}
+
+
+%-------------------------------------------------------
+%%%INPUTS FOR ANALYSIS, RESULTS, DISCUSSION
+%-----------------------------------------------------
+
+%\section{Analysis}
+%\label{sec-ana}
+%\input{ana.tex}
+
+\section{Results}
+\label{sec-res}
+\input{res.tex}
+
+\section{Discussion and Conclusion}
+\label{sec-dnc}
+\input{dis.tex}
+
+
+
+%-------------------------------------%
+
+
+\begin{acknowledgements}
+This research was supported by the DFG Cluster of Excellence ʻOrigin and
+Structure of the Universe'.
+B.L. acknowledges support for this work by the Deutsche
+Forschungsgemeinschaft through TRR33, The Dark Universe. We all are grateful to the ESO Visitor Programme to support the visit of S. B. to Garching when this work was started.
+We would like to thank Rahman Amanullah for providing published photometry of SN2014J in the near infrared. 
+
+\end{acknowledgements}
+
+\input{ref.tex}
+
+%\appendix
+%\input{appendix}
+
+\end{document}
+ 

@@ -17,6 +17,12 @@ the values are consistent with Churazov 2014.
 
 for our analysis, with an Mni of 0.58 (Lbol=1.16), A_V=2.1 +/- 0.14 and m_v of 14.11 (+/- 0.01) the distance to M100 is 31.36 (+/-) 0.34
 
+----------------------------------------------------------------------------
+13.03.2015
+--> looking at the distribution of calculated nickel masses. 
+Deriving a B maximum from the value of Mni calculated will help understand whether the sample distribution has sensible values. 
+
+Using richard's relation (Scalzo+2014c) the Mb distribution has a mean of -19.059 and an std of 0.34. For a sample of Ia''s without 91bg-likes or super-chandra explosions, this is the expected B-magnitude scatter (see Phillips 1993, Branch and Miller 93(?))
 
 
 

@@ -1,0 +1,28 @@
+\section{Principal Component Analysis in the combined fit}
+
+In section \ref{} we try to simultaneously fit the $t_2$ in $Y$ and $J$ to obtain combined constraints on $L_{max}$. However, the multivariate regression returns estimates with insignificant $t$-statistics and a high standard error. Moreover, the slope estimated for the $Y$ band $t_2$ is \emph{negative} which is incorrect since the $t_2(Y)$ has a positive correlation with $L_{max}$. 
+
+These estimates for the multivariate regression are incorrect due to the problem of multicollinearity. This arsies due to the strong correlation between the predictor variables, in this case, $t_2$ $Y$ and $J$ In order to circumvent this problem, we apply a principal component analysis (PCA) to the two variables and transform them into uncorrelated principal components. 
+
+We use  a Python package \emph{sci-kit learn} to decompose the variables into a principal component (PC). We derive a linear relation between the PC and the $L_{max}$ values in Table \ref{tab:mni}. 
+The measured $t_2$ for heavily reddened objects are transformed in the direction of the PC and the error from the slope of the linear relation is propagated. For the final estimated $L_{max}$, we add the mean $L_{max}$ for the objects in the low-reddening sample. The error on the mean is calculated by bootstrap resampling.  
+We find that the PCA estimates give a marginal improvement on the error 
+
+\begin{table}
+\begin{center}
+\caption{$M_{Ni}$ estimates for 5 objects with high values of $E(B-V)_{host}$. We present constraints from the relation using only $t_2(J)$ as well as from both $t_2(Y)$ and $t_2(J)$. We can see a marked decrease in the error values when combined constraints are used}
+\begin{tabular}{llcccrr}
+\hline
+SN &  $M_{Ni}$ (inferred) & $\sigma$  \\
+\hline
+SN1986G	& 0.34 & 0.08	\\
+SN2005A	& 0.56	&  0.10  \\
+SN2006X	& 0.57 & 0.10  \\\
+SN2008fp &  0.63 & 0.11 \\
+SN2014J	& 0.66	& 0.12 \\
+
+\hline
+\end{tabular}
+\label{tab:red}
+\end{center}
+\end{table}

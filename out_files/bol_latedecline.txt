@@ -1,0 +1,8 @@
+../lcbol_distrib/finfiles/02fk_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0330145619464
+../lcbol_distrib/finfiles/SN2005M_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0421090790752
+../lcbol_distrib/finfiles/SN2005el_lcbol_BVRIJH.dat -0.0330354505099
+../lcbol_distrib/finfiles/SN2005ki_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0359350344801
+../lcbol_distrib/finfiles/SN2007on_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0328732455185
+../lcbol_distrib/finfiles/sn2008bc_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0320950480831
+../lcbol_distrib/finfiles/sn2008hv_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.0295507050956
+../lcbol_distrib/finfiles/sn2011fe_lcbol_u_CSPB_CSPV_CSPr_CSPi_CSPJ_CSPH_CSP.dat -0.047270282834

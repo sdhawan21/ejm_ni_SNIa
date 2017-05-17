@@ -1,0 +1,50 @@
+"""
+Late time bolometric decline rate calculation 
+(based on numpy linalg library)
+
+For both normal and faint Ia's. 
+
+Uses the package 'pack', routine called bol. It has a class called bol_func under which the late_decl function is written 
+
+
+"""
+import numpy as np
+import sys
+import matplotlib.pyplot as plt
+
+
+from glob import glob
+from scipy.stats import pearsonr 
+from pack import bol
+
+def decl_meas(fil):
+	t0=bol.bol_func().bolpeak(fil)[1]
+	arr=np.loadtxt(fil)
+	#convert to phases
+	arr[:,0]-=t0
+	arr[:,1]=np.log10(arr[:,1])
+	#extract only the first 2 rows
+	lc=arr[:,[0, 1]]
+	m=bol.bol_func().late_decl(lc, ran=[40, 90])
+	return m, max(lc[:,0])
+
+def plotbol(fil):
+	tt=np.loadtxt(fil)
+	t0=bol.bol_func().bolpeak(fil)[1]
+	plt.plot(tt[:,0]-t0, tt[:,1], 'r.')
+	plt.show()
+def main():
+	pt='../../lcbol_distrib/finfiles/'
+	pt1='../../'
+	#files=np.loadtxt('../../filopt.txt', dtype='string')
+	
+	files=sorted(glob('lcbol_distrib/*_lcbol_*BVRIJH.*'))
+	fout=open('opt_latedeclinerates.dat', 'w')
+	for fil in files:	
+		try:
+			tt=decl_meas(pt1+fil)[0]
+			print 2.5*tt[0], tt[1]
+			fout.write(fil+'\t'+str(2.5*tt[0])+'\n')
+		except: 
+			print "Data insufficient for calculations"
+main()

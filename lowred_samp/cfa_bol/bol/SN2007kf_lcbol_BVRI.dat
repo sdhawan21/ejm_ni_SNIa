@@ -1,0 +1,17 @@
+#generated on Tue Dec  8 18:20:16 2015 using mklcbol.pro
+#
+#INFILE   SN2007kf.dat
+#NAME     SN2007kf
+#AV_HOST  0.636 +/- 0.020
+#RV_HOST  1.700 +/- 0.000
+#AV_MW    0.116 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 36.551 +/- 0.100
+#NFILT    4 (B_Bessell,V_Bessell,R_Bessell,I_Bessell)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 54372.102   2.24759266E+42   1.55780742E+41
+ 54380.090   2.24759266E+42   1.55780742E+41
+ 54380.094   2.24759266E+42   1.55780742E+41
+ 54380.102   2.24759266E+42   1.55780742E+41
+ 54404.145   2.24759266E+42   1.55780742E+41

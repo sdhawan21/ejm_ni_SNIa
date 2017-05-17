@@ -1,0 +1,10 @@
+SN		ni	err	lit	errl	source
+1998bu		0.63   0.12     0.57	na	s06b
+1999ac		0.57   0.12    0.67  (.29)	s06a
+2001el		0.63   0.15    0.40  (0.38)      s06a      
+
+2002bo 		0.55    0.11	0.52   n/a	stehl+
+
+2003hv		0.47    0.11    0.40  (.11)     leloudas 09 
+
+2003cg		0.64    0.13	0.53	na	Elias-rosa et al.

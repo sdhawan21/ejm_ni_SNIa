@@ -1,0 +1,40 @@
+Flux redward of K contributes only a few % to the total bolometric flux
+
+bluewards of u is a maximum contribution of ~6-10% (Suntzeff 1996, calculating the area under a blackbody with peak ard b-band)
+
+
+
+table 2 and 6 have mni estimates for the sample of objects with low reddening and for the whole sample with t2 measured. 
+the values in table 6 use a fixed rise-time mapping from Lbol to Mni. Comparing these values with column 5 of table 2, we can see a good agreement for all objects but 2005am. this object has a higher bolometric peak than its dm15 would predict. thus the expected mni from the best would be lower than the measured value. 
+
+
+-----------------------------------------------------------------------------
+
+1. errors on Mni from bolometric lc.
+--> computed by MC
+--> in case of fixed rise 19+/-3 days
+--> in case of variable the error is +/-2 days (as in Scalzo 2014)
+
+--> wang 2008 has a distribution of Ni masses derived from the delta m_15
+their mean error is 0.17, attributed to a weaker correlation between the delta m_15 and mNi
+Their sample relies heavily on the stritzinger+ papers to get the original calibration relation  
+
+
+
+--------------------------------------------------------------------------------------------
+
+#TOADD (when bruno is happy with the analysis section):
+
+---> we use an orthogonal distance regression to obtain a best fit linear model to the data. (cite Boggs and Rogers)
+
+--->	Describe the MCMC linear fit to the data using emcee (cite Foreman-Mackey)
+
+
+
+
+
+
+
+
+
+

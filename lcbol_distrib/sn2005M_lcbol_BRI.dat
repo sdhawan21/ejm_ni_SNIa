@@ -1,0 +1,13 @@
+#generated on Mon Jul 28 10:40:12 2014 using mklcbol.pro
+#
+#INFILE   sn2004dt_lcbol.dat
+#NAME     sn2005M
+#AV_HOST  0.150 +/- 0.113
+#RV_HOST  3.190 +/- 0.290
+#AV_MW    0.077 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 34.900 +/- 0.200
+#NFILT    3 (B_Bessell,R_Bessell,I_Bessell)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 53472.039         Infinity             -NaN

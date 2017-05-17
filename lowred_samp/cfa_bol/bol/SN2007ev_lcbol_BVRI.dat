@@ -1,0 +1,16 @@
+#generated on Tue Dec  8 18:19:02 2015 using mklcbol.pro
+#
+#INFILE   SN2007ev.dat
+#NAME     SN2007ev
+#AV_HOST  1.139 +/- 0.020
+#RV_HOST  1.700 +/- 0.000
+#AV_MW    0.131 +/- 0.000
+#RV_MW    3.100 +/- 0.000
+#DIST_MOD 36.383 +/- 0.100
+#NFILT    4 (B_Bessell,V_Bessell,R_Bessell,I_Bessell)
+#
+#time[d]     lbol[erg/s]      lbolerr[erg/s] 
+ 54288.449   3.57921267E+42   2.38326299E+41
+ 54292.402         Infinity             -NaN
+ 54292.406         Infinity             -NaN
+ 54292.410         Infinity             -NaN

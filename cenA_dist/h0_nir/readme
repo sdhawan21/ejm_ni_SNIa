@@ -1,0 +1,11 @@
+Readme for the H0 project with Stephane
+
+1. h0_est is the only script for the calculation. It required the 'pack' package
+
+2. ddc_model.dat has the values from stephane
+
+h0(Y): 71.1 pm 1.1
+
+h0(J): 71.2 pm 1.15
+
+
